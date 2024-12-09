@@ -130,6 +130,16 @@ class Coderockz_Woo_Delivery {
 		
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-coderockz-woo-delivery-delivery-option.php';
 
+		/**
+		 * The class responsible for showing blocks in checkout page.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'block/class-coderockz-woo-delivery-block.php';
+
+		/**
+		 * The class responsible for storing order meta data.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'block/class-coderockz-woo-delivery-block-storage.php';
+
 		$this->loader = new Coderockz_Woo_Delivery_Loader();
 
 	}
@@ -239,6 +249,8 @@ class Coderockz_Woo_Delivery {
 			$this->loader->add_action( 'woocommerce_review_order_before_payment', $plugin_public, 'coderockz_woo_delivery_add_custom_field');
 		} elseif( $position == "before_your_order" ) {
 			$this->loader->add_action( 'woocommerce_checkout_before_order_review_heading', $plugin_public, 'coderockz_woo_delivery_add_custom_field');
+		} elseif( $position == "before_customer_details" ) {
+			$this->loader->add_action( 'woocommerce_checkout_before_customer_details', $plugin_public, 'coderockz_woo_delivery_add_custom_field' );
 		}
 
 		//$this->loader->add_action('woocommerce_checkout_process', $plugin_public, 'coderockz_woo_delivery_customise_checkout_field_process');

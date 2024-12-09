@@ -1279,12 +1279,12 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 
 	                        <div class="coderockz-woo-delivery-form-group">
 	                    		<label class="coderockz-woo-delivery-form-label" for="coderockz_woo_delivery_order_limit_notice"><?php _e('Maximum Delivery Limit Exceed', 'woo-delivery'); ?></label>
-	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="Maximum Order Limit Notice. Default is Maximum Order Limit Exceed."><span class="dashicons dashicons-editor-help"></span></p>
+	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="Maximum delivery limit notice. Default is Maximum delivery limit exceed."><span class="dashicons dashicons-editor-help"></span></p>
 	                        	<input id="coderockz_woo_delivery_order_limit_notice" name="coderockz_woo_delivery_order_limit_notice" type="text" class="coderockz-woo-delivery-input-field" value="<?php echo (isset(get_option('coderockz_woo_delivery_localization_settings')['order_limit_notice']) && !empty(get_option('coderockz_woo_delivery_localization_settings')['order_limit_notice'])) ? get_option('coderockz_woo_delivery_localization_settings')['order_limit_notice'] : "" ?>" placeholder="" autocomplete="off"/>
 	                    	</div>
 	                    	<div class="coderockz-woo-delivery-form-group">
 	                    		<label class="coderockz-woo-delivery-form-label" for="coderockz_woo_delivery_pickup_limit_notice"><?php _e('Maximum Pickup Limit Exceed', 'woo-delivery'); ?></label>
-	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="Maximum Pickup Limit Notice. Default is Maximum Pickup Limit Exceed."><span class="dashicons dashicons-editor-help"></span></p>
+	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="Maximum pickup limit notice. Default is Maximum pickup limit exceed."><span class="dashicons dashicons-editor-help"></span></p>
 	                        	<input id="coderockz_woo_delivery_pickup_limit_notice" name="coderockz_woo_delivery_pickup_limit_notice" type="text" class="coderockz-woo-delivery-input-field" value="<?php echo (isset(get_option('coderockz_woo_delivery_localization_settings')['pickup_limit_notice']) && !empty(get_option('coderockz_woo_delivery_localization_settings')['pickup_limit_notice'])) ? stripslashes(esc_attr(get_option('coderockz_woo_delivery_localization_settings')['pickup_limit_notice'])) : "" ?>" placeholder="" autocomplete="off"/>
 	                    	</div>
 	                    	<div class="coderockz-woo-delivery-form-group">
@@ -1361,21 +1361,38 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 	                        	<input id="coderockz_woo_delivery_delivery_heading_checkout" name="coderockz_woo_delivery_delivery_heading_checkout" type="text" class="coderockz-woo-delivery-input-field" value="<?php echo (isset($other_settings['delivery_heading_checkout']) && !empty($other_settings['delivery_heading_checkout'])) ? stripslashes(esc_attr($other_settings['delivery_heading_checkout'])) : "" ?>" placeholder="" autocomplete="off"/>
 	                    	</div>
 
-	                        <div class="coderockz-woo-delivery-form-group">
-	                    		<label style="width:105px!important;" class="coderockz-woo-delivery-form-label" for="coderockz_delivery_time_format" style="display:unset!important"><?php _e('Field Position', 'woo-delivery'); ?></label>
-	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="Position of all the fields that are enabled by this plugin. Default is after order notes."><span class="dashicons dashicons-editor-help"></span></p>
-	                    		<select class="coderockz-woo-delivery-select-field" name="coderockz_woo_delivery_field_position">
-	                    			<option value="" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == ""){ echo "selected"; } ?>><?php _e('Select Position', 'woo-delivery'); ?></option>
-									<option value="before_billing" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_billing"){ echo "selected"; } ?>>Before Billing Address</option>
-									<option value="after_billing" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_billing"){ echo "selected"; } ?>>After Billing Address</option>
-									<option value="before_shipping" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_shipping"){ echo "selected"; } ?>>Before Shipping Address</option>
-									<option value="after_shipping" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_shipping"){ echo "selected"; } ?>>After Shipping Address</option>
-									<option value="before_notes" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_notes"){ echo "selected"; } ?>>Before Order Notes</option>
-									<option value="after_notes" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_notes"){ echo "selected"; } ?>>After Order Notes</option>
-									<option value="before_payment" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_payment"){ echo "selected"; } ?>>Between Your Order And Payment Section</option>
-									<option value="before_your_order" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_your_order"){ echo "selected"; } ?>>Before Your Order Section</option>
-								</select>
-	                    	</div>
+	                        <?php if(WC_Blocks_Utils::has_block_in_page( wc_get_page_id('checkout'), 'woocommerce/checkout' )) { ?>
+
+		                    	<div class="coderockz-woo-delivery-form-group">
+		                    		<label class="coderockz-woo-delivery-form-label" for="coderockz_delivery_time_format"><?php _e('Field Position', 'coderockz-woo-delivery'); ?></label>
+		                    		<p class="coderockz-woo-delivery-tooltip" tooltip="<?php _e("Position of all the fields that are enabled by this plugin. Default is after order notes.", 'coderockz-woo-delivery'); ?>"><span class="dashicons dashicons-editor-help"></span></p>
+		                    		<select class="coderockz-woo-delivery-select-field" name="coderockz_woo_delivery_block_field_position">
+		                    			<option value="" <?php if(isset($other_settings['block_field_position']) && $other_settings['block_field_position'] == ""){ echo "selected"; } ?>><?php _e('Select Position', 'coderockz-woo-delivery'); ?></option>
+										<option value="contact-information" <?php if(isset($other_settings['block_field_position']) && $other_settings['block_field_position'] == "contact-information"){ echo "selected"; } ?>><?php _e('After Contact Information Section', 'coderockz-woo-delivery'); ?></option>
+										<option value="shipping-address" <?php if(isset($other_settings['block_field_position']) && $other_settings['block_field_position'] == "shipping-address"){ echo "selected"; } ?>><?php _e('After Shipping Address Section', 'coderockz-woo-delivery'); ?></option>
+										<option value="billing-address" <?php if(isset($other_settings['block_field_position']) && $other_settings['block_field_position'] == "billing-address"){ echo "selected"; } ?>><?php _e('After Billing Address Section', 'coderockz-woo-delivery'); ?></option>
+
+									</select>
+		                    	</div>
+	                        
+	                    	<?php } else {?>
+	                    		<div class="coderockz-woo-delivery-form-group">
+		                    		<label class="coderockz-woo-delivery-form-label" for="coderockz_delivery_time_format"><?php _e('Field Position', 'coderockz-woo-delivery'); ?></label>
+		                    		<p class="coderockz-woo-delivery-tooltip" tooltip="<?php _e("Position of all the fields that are enabled by this plugin. Default is after order notes.", 'coderockz-woo-delivery'); ?>"><span class="dashicons dashicons-editor-help"></span></p>
+		                    		<select class="coderockz-woo-delivery-select-field" name="coderockz_woo_delivery_field_position">
+		                    			<option value="" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == ""){ echo "selected"; } ?>><?php _e('Select Position', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_billing" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_billing"){ echo "selected"; } ?>><?php _e('Before Billing Address', 'coderockz-woo-delivery'); ?></option>
+										<option value="after_billing" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_billing"){ echo "selected"; } ?>><?php _e('After Billing Address', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_shipping" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_shipping"){ echo "selected"; } ?>><?php _e('Before Shipping Address', 'coderockz-woo-delivery'); ?></option>
+										<option value="after_shipping" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_shipping"){ echo "selected"; } ?>><?php _e('After Shipping Address', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_notes" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_notes"){ echo "selected"; } ?>><?php _e('Before Order Notes', 'coderockz-woo-delivery'); ?></option>
+										<option value="after_notes" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "after_notes"){ echo "selected"; } ?>><?php _e('After Order Notes', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_payment" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_payment"){ echo "selected"; } ?>><?php _e('Between Your Order And Payment Section', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_your_order" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_your_order"){ echo "selected"; } ?>><?php _e('Before Your Order Section', 'coderockz-woo-delivery'); ?></option>
+										<option value="before_customer_details" <?php if(isset($other_settings['field_position']) && $other_settings['field_position'] == "before_customer_details"){ echo "selected"; } ?>><?php _e('Before Customer Details', 'coderockz-woo-delivery'); ?></option>
+									</select>
+	                    		</div>
+	                    	<?php } ?>
 	                    	<div class="coderockz-woo-delivery-form-group">
 	                    		<label class="coderockz-woo-delivery-form-label" style="display:unset!important"><?php _e('Custom CSS', 'woo-delivery'); ?></label>
 	                    		<p class="coderockz-woo-delivery-tooltip" tooltip="If you want some custom css to avoid the plugin/theme conflict, put the css code here."><span class="dashicons dashicons-editor-help"></span></p>
@@ -1435,8 +1452,28 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					    </tr>
 					    
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Every Texts are Translatable</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">All Texts are Translatable</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Change Delivery Details from Order Page</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">HPOS Compatibility</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Block Checkout Page Compatibility</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><b>Introduce Soon</b><br/><span style="color: #bbb;font-size: 11px;font-style: italic;">(Depending on block checkout page development)</span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Pickup Location</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
@@ -1445,28 +1482,17 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide Plugin Module Completely for Specific Categories/Products</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Hide Plugin Module depending on Category/Product/Shipping Method/User Role/Order Amount</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>					    
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Category/product/zone/state/postcode/Shipping method wise offdays</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide Plugin Module For Specific Shipping Method</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide Plugin Module For Specific User Role</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Category/product/zone/state/postcode wise offdays</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Specific dates as offdays for category/product/zone</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Specific dates as offdays for category/product/Shipping Zone</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1476,17 +1502,7 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Next Month Off for Certain Category</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Current Week Off/Next Week Off for Certain Category</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Shipping method wise Offdays</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Current Week Off/Next Week Off/Next Month Off for Certain Category</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1496,7 +1512,12 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Custom Delivery Time Slot</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Custom Delivery/Pickup Time Slot</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Shipping Zone/State/Postal Code/Shipping Method</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1506,32 +1527,7 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Custom Pickup Time Slot</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Shipping Zone</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Shipping State</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Shipping PostCode</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Cart Products</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Cart Categories</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Hide/Show Timeslot Based on Cart Categories/Products</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1561,22 +1557,12 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Pickup Location</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Disable same day delivery/pickup</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Delivery/Pickup Details on a Calendar View</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Google Calendar Sync</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1596,32 +1582,18 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Disable Delivery for Specific Days</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Disable Delivery/Pickup for Specific Days</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Disable Self Pickup for Specific Days</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Delivery/Pickup Option Based on Cart Amount</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
+
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Delivery Option(Cart Amount Base)</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Pickup Option(Cart Amount Base)</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Delivery Option Based on Category/Product</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Pickup Option Based on Category/Product</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Restrict Delivery/Pickup Option Based on Category/Product</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1712,27 +1684,7 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Category Wise Processing Days</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Product Wise Processing Days</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Weekday Wise Processing Days</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Shipping Zone Wise Processing Days</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Shipping Method Wise Processing Days</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Category/Product/Weekday/Shipping Zone/Shipping Method Wise Processing Days</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1742,17 +1694,7 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Category Wise Processing Time</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Product Wise Processing Time</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Weekday Wise Processing Time</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Category/Product/Weekday Wise/Shipping Zone Processing Time</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
@@ -1782,18 +1724,13 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Discount Coupon wise Specific Delivery Days</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Delivery Date Wise Discount Coupon</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Additional Field</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Change Delivery Details from Order Page</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>

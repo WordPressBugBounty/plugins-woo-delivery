@@ -1,10 +1,10 @@
 === Delivery & Pickup Date Time for WooCommerce ===
 Contributors: CodeRockz
 Donate link: https://coderockz.com
-Tags: WooCommerce, Delivery Date, Pickup Date, WooCommerce Delivery Date, WooCommerce Pickup Date, Delivery Time, Pickup Time, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery Date Time, Pickup Date Time, WooCommerce Delivery Date Time, WooCommerce Pickup Date Time, WooCommerce Delivery & Pickup Date Time, Delivery & Pickup Date Time for WooCommerce 
+Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery & Pickup Date Time for WooCommerce 
 Requires at least: 4.0.1
-Tested up to: 6.6
-Stable tag: 1.3.68
+Tested up to: 6.7
+Stable tag: 1.3.69
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,11 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.69 =
+* Fixed: Block checkout page compatibility issue is fixed.
+* Fixed: YOOtheme compatibility issue is fixed.
+* Tweak: Compatability check with WC v9.4 & WP v6.7
 
 = 1.3.68 =
 * Tweak: Compatability check with WC 9.3 & WP 6.6

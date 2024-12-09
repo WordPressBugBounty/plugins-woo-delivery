@@ -539,6 +539,9 @@ class Coderockz_Woo_Delivery_Admin {
 		$field_position = sanitize_text_field($date_form_data['coderockz_woo_delivery_field_position']);
 		$other_settings_form_settings['field_position'] = $field_position;
 
+		$block_field_position = isset($date_form_data['coderockz_woo_delivery_block_field_position']) && $date_form_data['coderockz_woo_delivery_block_field_position'] != "" ? sanitize_textarea_field($date_form_data['coderockz_woo_delivery_block_field_position']) : "contact-information";
+		$other_settings_form_settings['block_field_position'] = $block_field_position;
+
 		$coderockz_disable_fields_for_downloadable_products = !isset($date_form_data['coderockz_disable_fields_for_downloadable_products']) ? false : true;
 		$other_settings_form_settings['disable_fields_for_downloadable_products'] = $coderockz_disable_fields_for_downloadable_products;
 		
@@ -950,7 +953,7 @@ class Coderockz_Woo_Delivery_Admin {
 
 	    $enable_delivery_option = (isset($delivery_option_settings['enable_option_time_pickup']) && !empty($delivery_option_settings['enable_option_time_pickup'])) ? $delivery_option_settings['enable_option_time_pickup'] : false;
 
-	    $order_type_field_label = (isset($delivery_option_settings['delivery_option_label']) && !empty($delivery_option_settings['delivery_option_label'])) ? stripslashes($delivery_option_settings['delivery_option_label']) : __("Select Order Type", "woo-delivery");
+	    $order_type_field_label = (isset($delivery_option_settings['delivery_option_label']) && !empty($delivery_option_settings['delivery_option_label'])) ? stripslashes($delivery_option_settings['delivery_option_label']) : __("Select order type", "woo-delivery");
 
 		$enable_delivery_date = (isset($delivery_date_settings['enable_delivery_date']) && !empty($delivery_date_settings['enable_delivery_date'])) ? $delivery_date_settings['enable_delivery_date'] : false;
 		$enable_pickup_date = (isset($pickup_date_settings['enable_pickup_date']) && !empty($pickup_date_settings['enable_pickup_date'])) ? $pickup_date_settings['enable_pickup_date'] : false;
@@ -1034,8 +1037,8 @@ class Coderockz_Woo_Delivery_Admin {
 
 
 		$localization_settings = get_option('coderockz_woo_delivery_localization_settings');
-		$order_limit_notice = (isset($localization_settings['order_limit_notice']) && !empty($localization_settings['order_limit_notice'])) ? "(".stripslashes($localization_settings['order_limit_notice']).")" : __("(Maximum Delivery Limit Exceed)", "woo-delivery");
-		$pickup_limit_notice = (isset($localization_settings['pickup_limit_notice']) && !empty($localization_settings['pickup_limit_notice'])) ? "(".stripslashes($localization_settings['pickup_limit_notice']).")" : __("(Maximum Pickup Limit Exceed)", "woo-delivery");
+		$order_limit_notice = (isset($localization_settings['order_limit_notice']) && !empty($localization_settings['order_limit_notice'])) ? "(".stripslashes($localization_settings['order_limit_notice']).")" : __("(Maximum delivery limit exceed)", "woo-delivery");
+		$pickup_limit_notice = (isset($localization_settings['pickup_limit_notice']) && !empty($localization_settings['pickup_limit_notice'])) ? "(".stripslashes($localization_settings['pickup_limit_notice']).")" : __("(Maximum pickup limit exceed)", "woo-delivery");
 
 		$delivery_field_label = (isset($delivery_option_settings['delivery_label']) && !empty($delivery_option_settings['delivery_label'])) ? $delivery_option_settings['delivery_label'] : __("Delivery", "woo-delivery");
 		$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? $delivery_option_settings['pickup_label'] : __("Pickup", "woo-delivery");
@@ -1135,7 +1138,7 @@ class Coderockz_Woo_Delivery_Admin {
 
     	if($enable_delivery_time) {
     		$meta_box .= '<select style="width:100%;margin:5px auto;display:none" name ="coderockz_woo_delivery_meta_box_time_field" id="coderockz_woo_delivery_meta_box_time_field" data-order_limit_notice="'.$order_limit_notice.'">';
-    		$meta_box .= '<option value="" disabled="disabled" selected>'.__("Select Time Slot", "woo-delivery").'</option>';
+    		$meta_box .= '<option value="" disabled="disabled" selected>'.__("Select delivery time", "woo-delivery").'</option>';
     		foreach($time_options as $key => $value) {
     			$selected = ($key == $time) ? "selected" : "";
     			$meta_box .= '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
@@ -1145,7 +1148,7 @@ class Coderockz_Woo_Delivery_Admin {
 
     	if($enable_pickup_time) {
     		$meta_box .= '<select style="width:100%;margin:5px auto;display:none" name ="coderockz_woo_delivery_meta_box_pickup_field" id="coderockz_woo_delivery_meta_box_pickup_field" data-pickup_limit_notice="'.$pickup_limit_notice.'">';
-    		$meta_box .= '<option value="" disabled="disabled" selected>'.__("Select Pickup Slot", "woo-delivery").'</option>';
+    		$meta_box .= '<option value="" disabled="disabled" selected>'.__("Select pickup time", "woo-delivery").'</option>';
     		foreach($pickup_options as $key => $value) {
     			$selected = ($key == $pickup_time) ? "selected" : "";
     			$meta_box .= '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
@@ -1376,21 +1379,19 @@ class Coderockz_Woo_Delivery_Admin {
 		check_ajax_referer('coderockz_woo_delivery_nonce');
 		
 		$delivery_time_settings = get_option('coderockz_woo_delivery_time_settings');
-		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		
 
 		$max_order_per_slot = (isset($delivery_time_settings['max_order_per_slot']) && !empty($delivery_time_settings['max_order_per_slot'])) ? $delivery_time_settings['max_order_per_slot'] : 0;
 		
 		$disabled_current_time_slot = (isset($delivery_time_settings['disabled_current_time_slot']) && !empty($delivery_time_settings['disabled_current_time_slot'])) ? $delivery_time_settings['disabled_current_time_slot'] : false;
 
 		if(isset($_POST['onlyDeliveryTime']) && $_POST['onlyDeliveryTime']) {
-			$order_date = date("Y-m-d", sanitize_text_field(strtotime($_POST['date']))); 
+			//$order_date = date("Y-m-d", sanitize_text_field(strtotime($_POST['date']))); 
 			if($this->hpos) {
 		    	$args = array(
 			        'limit' => -1,
 					'type' => array( 'shop_order' ),
-					'date_created' => $order_date,
+					'date_created' => $_POST['date'],
 					'meta_query' => array(
 			            array(
 			                'key'     => 'delivery_type',
@@ -1403,7 +1404,7 @@ class Coderockz_Woo_Delivery_Admin {
 		    } else {
 		    	$args = array(
 			        'limit' => -1,
-			        'date_created' => $order_date,
+			        'date_created' => $_POST['date'],
 			        'delivery_type' => 'delivery',
 			        'return' => 'ids'
 			    );
@@ -1417,7 +1418,7 @@ class Coderockz_Woo_Delivery_Admin {
 					'meta_query' => array(
 			            array(
 			                'key'     => 'delivery_date',
-			                'value'   => date("Y-m-d", strtotime(sanitize_text_field($_POST['date']))),
+			                'value'   => $_POST['date'],
 			                'compare' => '==',
 			            ),
 			        ),
@@ -1426,7 +1427,7 @@ class Coderockz_Woo_Delivery_Admin {
 		    } else {
 		    	$args = array(
 			        'limit' => -1,
-			        'delivery_date' => date("Y-m-d", strtotime(sanitize_text_field($_POST['date']))),
+			        'delivery_date' => $_POST['date'],
 			        'return' => 'ids'
 			    );
 		    }
@@ -1451,6 +1452,9 @@ class Coderockz_Woo_Delivery_Admin {
 			}
 		}
 
+		// if any timezone data is saved, set default timezone with the data
+		$timezone = $this->helper->get_the_timezone();
+		date_default_timezone_set($timezone);
 		$current_time = (date("G")*60)+date("i");
 
 		$response = [
@@ -1469,9 +1473,6 @@ class Coderockz_Woo_Delivery_Admin {
 		check_ajax_referer('coderockz_woo_delivery_nonce');
 		
 		$delivery_pickup_settings = get_option('coderockz_woo_delivery_pickup_settings');
-		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
 
 		$pickup_max_order_per_slot = (isset($delivery_pickup_settings['max_pickup_per_slot']) && !empty($delivery_pickup_settings['max_pickup_per_slot'])) ? $delivery_pickup_settings['max_pickup_per_slot'] : 0;
 
@@ -1480,12 +1481,12 @@ class Coderockz_Woo_Delivery_Admin {
 
 		
 		if(isset($_POST['onlyPickupTime']) && $_POST['onlyPickupTime']) {
-			$order_date = date("Y-m-d", strtotime(sanitize_text_field($_POST['date']))); 
+			//$order_date = date("Y-m-d", strtotime(sanitize_text_field($_POST['date']))); 
 			if($this->hpos) {
 		    	$args = array(
 			        'limit' => -1,
 					'type' => array( 'shop_order' ),
-					'date_created' => $order_date,
+					'date_created' => $_POST['date'],
 					'meta_query' => array(
 			            array(
 			                'key'     => 'delivery_type',
@@ -1498,14 +1499,14 @@ class Coderockz_Woo_Delivery_Admin {
 		    } else {
 		    	$args = array(
 			        'limit' => -1,
-			        'date_created' => $order_date,
+			        'date_created' => $_POST['date'],
 			        'delivery_type' => 'pickup',
 			        'return' => 'ids'
 			    );
 		    }
 
 		} else {
-			$pickup_date = date("Y-m-d", strtotime(sanitize_text_field($_POST['date'])));
+			//$pickup_date = date("Y-m-d", strtotime(sanitize_text_field($_POST['date'])));
 			if($this->hpos) {
 		    	$args = array(
 			        'limit' => -1,
@@ -1513,7 +1514,7 @@ class Coderockz_Woo_Delivery_Admin {
 					'meta_query' => array(
 			            array(
 			                'key'     => 'pickup_date',
-			                'value'   => $pickup_date,
+			                'value'   => $_POST['date'],
 			                'compare' => '==',
 			            ),
 			        ),
@@ -1522,7 +1523,7 @@ class Coderockz_Woo_Delivery_Admin {
 		    } else {
 		    	$args = array(
 			        'limit' => -1,
-			        'pickup_date' => $pickup_date,
+			        'pickup_date' => $_POST['date'],
 			        'return' => 'ids'
 			    );
 		    }	    
@@ -1549,6 +1550,9 @@ class Coderockz_Woo_Delivery_Admin {
 
 		}
 
+		// if any timezone data is saved, set default timezone with the data
+		$timezone = $this->helper->get_the_timezone();
+		date_default_timezone_set($timezone);
 		$current_time = (date("G")*60)+date("i");
 
 		$response = [
