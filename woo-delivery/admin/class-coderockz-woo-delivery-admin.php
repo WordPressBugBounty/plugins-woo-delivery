@@ -151,26 +151,6 @@ class Coderockz_Woo_Delivery_Admin {
         return $links;
     }
 
-    public function coderockz_woo_delivery_process_delivery_timezone_form() { 
-    	check_ajax_referer('coderockz_woo_delivery_nonce');
-		parse_str( $_POST[ 'dateFormData' ], $date_form_data );
-		$timezone_form_settings = [];
-
-		$store_location_timezone = sanitize_text_field($date_form_data['coderockz_delivery_time_timezone']);
-
-		$timezone_form_settings['store_location_timezone'] = $store_location_timezone;
-
-
-		if(get_option('coderockz_woo_delivery_time_settings') == false) {
-			update_option('coderockz_woo_delivery_time_settings', $timezone_form_settings);
-		} else {
-			$timezone_form_settings = array_merge(get_option('coderockz_woo_delivery_time_settings'),$timezone_form_settings);
-			update_option('coderockz_woo_delivery_time_settings', $timezone_form_settings);
-		}
-
-		wp_send_json_success();
-	}
-
 	public function coderockz_woo_delivery_process_delivery_option_settings() { 
     	check_ajax_referer('coderockz_woo_delivery_nonce');
 		
@@ -601,8 +581,8 @@ class Coderockz_Woo_Delivery_Admin {
 		$pickup_time_field_label = (isset($pickup_time_settings['field_label']) && !empty($pickup_time_settings['field_label'])) ? stripslashes($pickup_time_settings['field_label']) : __("Pickup Time", "woo-delivery");
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		$delivery_date_format = (isset($delivery_date_settings['date_format']) && !empty($delivery_date_settings['date_format'])) ? $delivery_date_settings['date_format'] : "F j, Y";
 
@@ -688,8 +668,8 @@ class Coderockz_Woo_Delivery_Admin {
 
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		if($column == 'order_delivery_details')
 		{
@@ -801,8 +781,8 @@ class Coderockz_Woo_Delivery_Admin {
 		$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? stripslashes($delivery_option_settings['pickup_label']) : __("Pickup", "woo-delivery");*/
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		if( version_compare( get_option( 'woocommerce_version' ), '3.0.0', ">=" ) ) {            
 	        $order_id = $order->get_id();
@@ -925,8 +905,8 @@ class Coderockz_Woo_Delivery_Admin {
 
 	public function coderockz_woo_delivery_meta_box_markup($post_or_order_object) {
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		/*global $post;
 
@@ -942,7 +922,7 @@ class Coderockz_Woo_Delivery_Admin {
 
 		$order_items = $order->get_items();
 
-		$today = date('Y-m-d', time());
+		$today = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
 
 		$delivery_date_settings = get_option('coderockz_woo_delivery_date_settings');
 		$pickup_date_settings = get_option('coderockz_woo_delivery_pickup_date_settings');
@@ -965,8 +945,7 @@ class Coderockz_Woo_Delivery_Admin {
 		$disable_dates = [];
 		$pickup_disable_dates = [];
 
-		$current_time = (date("G")*60)+date("i");
-
+		$current_time = (wp_date("G")*60)+wp_date("i");
 
 		if($enable_delivery_option && (metadata_exists('post', $order_id, 'delivery_type') || $order->meta_exists('delivery_type'))) {
 	    	if($this->hpos) {
@@ -1044,8 +1023,8 @@ class Coderockz_Woo_Delivery_Admin {
 		$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? $delivery_option_settings['pickup_label'] : __("Pickup", "woo-delivery");
 
 		$off_days = (isset($delivery_date_settings['off_days']) && !empty($delivery_date_settings['off_days'])) ? $delivery_date_settings['off_days'] : array();
-			$selectable_start_date = date('Y-m-d H:i:s', time());
-			$start_date = new DateTime($selectable_start_date);
+			$selectable_start_date = wp_date('Y-m-d H:i:s', current_time( 'timestamp', 1 ));
+        	$start_date = current_datetime($selectable_start_date);
 			if(count($off_days)) {
 				$date = $start_date;
 				foreach ($off_days as $year => $months) {
@@ -1170,8 +1149,8 @@ class Coderockz_Woo_Delivery_Admin {
 		check_ajax_referer('coderockz_woo_delivery_nonce');
 		$delivery_time_settings = get_option('coderockz_woo_delivery_time_settings');
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		$order_id = sanitize_text_field($_POST['orderId']);
 		$order = wc_get_order( $order_id );
@@ -1453,9 +1432,9 @@ class Coderockz_Woo_Delivery_Admin {
 		}
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
-		$current_time = (date("G")*60)+date("i");
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
+		$current_time = (wp_date("G")*60)+wp_date("i");
 
 		$response = [
 			"delivery_times" => $delivery_times,
@@ -1551,9 +1530,9 @@ class Coderockz_Woo_Delivery_Admin {
 		}
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
-		$current_time = (date("G")*60)+date("i");
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
+		$current_time = (wp_date("G")*60)+wp_date("i");
 
 		$response = [
 			"pickup_delivery_times" => $pickup_delivery_times,
@@ -1570,8 +1549,8 @@ class Coderockz_Woo_Delivery_Admin {
     	$delivery_selection = isset($_POST['deliverySelector']) ? sanitize_text_field($_POST['deliverySelector']) : "delivery";
 
 		// if any timezone data is saved, set default timezone with the data
-		$timezone = $this->helper->get_the_timezone();
-		date_default_timezone_set($timezone);
+		//$timezone = $this->helper->get_the_timezone();
+		//date_default_timezone_set($timezone);
 
 		$disable_delivery_date_passed_time = [];
 		$disable_pickup_date_passed_time = [];
@@ -1592,10 +1571,10 @@ class Coderockz_Woo_Delivery_Admin {
 			$time_slot_end[] = (int)$time_settings['delivery_time_ends'];												
 			$highest_timeslot_end = max($time_slot_end);
 
-			$current_time = (date("G")*60)+date("i");
+			$current_time = (wp_date("G")*60)+wp_date("i");
 
 			if($current_time>$highest_timeslot_end) {
-				$disable_delivery_date_passed_time[] = date('Y-m-d', time());
+				$disable_delivery_date_passed_time[] = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
 			}
 
 		}
@@ -1607,10 +1586,10 @@ class Coderockz_Woo_Delivery_Admin {
 			$pickup_slot_end[] = (int)$pickup_settings['pickup_time_ends'];;
 			$highest_pickupslot_end = max($pickup_slot_end);
 
-			$current_time = (date("G")*60)+date("i");
+			$current_time = (wp_date("G")*60)+wp_date("i");
 
 			if($current_time>$highest_pickupslot_end) {
-				$disable_pickup_date_passed_time[] = date('Y-m-d', time());
+				$disable_pickup_date_passed_time[] = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
 			}
 
 		}

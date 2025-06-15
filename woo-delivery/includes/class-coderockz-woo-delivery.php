@@ -180,7 +180,6 @@ class Coderockz_Woo_Delivery {
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'coderockz_woo_delivery_menus_sections' );
 		$this->loader->add_filter( 'plugin_action_links_' . CODEROCKZ_WOO_DELIVERY , $plugin_admin, 'coderockz_woo_delivery_settings_link' );
-		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_delivery_timezone_form', $plugin_admin, 'coderockz_woo_delivery_process_delivery_timezone_form' );
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_delivery_option_settings', $plugin_admin, 'coderockz_woo_delivery_process_delivery_option_settings' );
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_delivery_date_form', $plugin_admin, 'coderockz_woo_delivery_process_delivery_date_form' );
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_pickup_date_form', $plugin_admin, 'coderockz_woo_delivery_process_pickup_date_form' );

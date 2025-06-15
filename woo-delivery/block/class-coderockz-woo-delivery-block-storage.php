@@ -137,7 +137,7 @@ class Coderockz_Woo_Delivery_Block_Storage {
     }
 
     static function check_time_validity( $date, $time, $type, $settings, $hpos, $errors ) {
-        date_default_timezone_set( $settings['timezone'] );
+        //date_default_timezone_set( $settings['timezone'] );
         $selected_date = empty( $date ) ? $settings['today'] : $date;
         $selected_date = date( 'Y-m-d', strtotime( $selected_date ) );
         $date_key = $type === 'delivery' ? 'delivery_date' : 'pickup_date';
@@ -148,8 +148,8 @@ class Coderockz_Woo_Delivery_Block_Storage {
         $last_time_arr = explode( ':', $time_arr[1] );
         $last_time_in_minutes = (int) $last_time_arr[0] * 60 + (int) $last_time_arr[1];
 
-        $date_time_obj = new \DateTime( 'now', new \DateTimeZone( $settings['timezone'] ) );
-        $current_time_in_minutes = ( $date_time_obj->format( "G" ) * 60 ) + $date_time_obj->format( "i" );
+        //$date_time_obj = new \DateTime( 'now', new \DateTimeZone( $settings['timezone'] ) );
+        $current_time_in_minutes = (wp_date("G")*60)+wp_date("i");
 
         if ( $selected_date === $settings['today'] && $current_time_in_minutes >= $last_time_in_minutes ) {
             if($type == 'delivery') {
@@ -189,7 +189,7 @@ class Coderockz_Woo_Delivery_Block_Storage {
             } else {
                 $args = array(
                     'limit'            => -1,
-                    'date_created_gmt' => $datetime_range,
+                    'date_created' => wp_date('Y-m-d',current_time( 'timestamp', 1 )),
                     $time_key          => $time,
                     'delivery_type'    => $type,
                     'return'           => 'ids',

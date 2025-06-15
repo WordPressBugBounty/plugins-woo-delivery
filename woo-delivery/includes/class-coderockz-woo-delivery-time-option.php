@@ -9,8 +9,8 @@ if( !class_exists( 'Coderockz_Woo_Delivery_Time_Option' ) ) {
 		public static function delivery_time_option($delivery_time_settings,$meta_box=null) {
 			
 			$helper = new Coderockz_Woo_Delivery_Helper();
-			$timezone = $helper->get_the_timezone();
-			date_default_timezone_set($timezone);
+			//$timezone = $helper->get_the_timezone();
+			//date_default_timezone_set($timezone);
 
 			$currency_symbol = get_woocommerce_currency_symbol();
 			

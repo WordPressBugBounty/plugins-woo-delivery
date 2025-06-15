@@ -7,8 +7,8 @@ if( !class_exists( 'Coderockz_Woo_Delivery_Delivery_Option' ) ) {
 		public static function delivery_option($delivery_option_settings,$meta_box=null) {
 			
 			$helper = new Coderockz_Woo_Delivery_Helper();
-			$timezone = $helper->get_the_timezone();
-			date_default_timezone_set($timezone);
+			//$timezone = $helper->get_the_timezone();
+			//date_default_timezone_set($timezone);
 			
 			$delivery_field_label = (isset($delivery_option_settings['delivery_label']) && !empty($delivery_option_settings['delivery_label'])) ? stripslashes($delivery_option_settings['delivery_label']) : __("Delivery", "woo-delivery");
 			$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? stripslashes($delivery_option_settings['pickup_label']) : __("Pickup", "woo-delivery");

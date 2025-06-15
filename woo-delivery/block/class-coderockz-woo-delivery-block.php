@@ -241,8 +241,8 @@ class Coderockz_Woo_Delivery_Block {
     }
 
     static function disable_passed_and_current_time_options( $settings, $type ) {
-        $date_time_obj = new \DateTime();
-        $current_time_in_minutes = ( $date_time_obj->format( "G" ) * 60 ) + $date_time_obj->format( "i" );
+        //$date_time_obj = new \DateTime();
+        $current_time_in_minutes = (wp_date("G")*60)+wp_date("i");
         $time_options = $type === 'delivery' ? $settings["delivery_time_options"] : $settings["pickup_time_options"];
 
         foreach ( $time_options as $key => $data ) {
@@ -298,7 +298,7 @@ class Coderockz_Woo_Delivery_Block {
             } else {
                 $args = array(
                     'limit'            => -1,
-                    'date_created_gmt' => $datetime_range,
+                    'date_created' => wp_date('Y-m-d',current_time( 'timestamp', 1 )),
                     'delivery_type'    => $type,
                     'return'           => 'ids',
                 );

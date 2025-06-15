@@ -57,10 +57,10 @@ class Coderockz_Woo_Delivery_Settings {
     }
 
     private function set_timezone() {
-        $timezone = $this->helper->get_the_timezone();
-        $this->settings['timezone'] = $timezone;
-        date_default_timezone_set( $timezone );
-        $this->settings['today'] = date( 'Y-m-d', time() );
+        //$timezone = $this->helper->get_the_timezone();
+        //$this->settings['timezone'] = $timezone;
+        //date_default_timezone_set( $timezone );
+        $this->settings['today'] = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
     }
 
     private function set_other_settings() {
@@ -193,9 +193,9 @@ class Coderockz_Woo_Delivery_Settings {
     }
 
     private function set_passed_dates() {
-        $date_time_obj = new \DateTime();
-        $current_time = ( $date_time_obj->format( "G" ) * 60 ) + $date_time_obj->format( "i" );
-        $current_date = $date_time_obj->format( "Y-m-d" );
+        //$date_time_obj = new \DateTime();
+        $current_time = (wp_date("G")*60)+wp_date("i");
+        $current_date = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
 
         $this->settings['disable_delivery_date_passed_time'] = [];
         $this->settings['disable_pickup_date_passed_time'] = [];
