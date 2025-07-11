@@ -4,7 +4,7 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery & Pickup Date Time for WooCommerce 
 Requires at least: 4.0.1
 Tested up to: 6.8
-Stable tag: 1.3.70
+Stable tag: 1.3.71
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,9 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.71 =
+* Fixed: Plugin deactivation button not working.
 
 = 1.3.70 =
 * Fixed: PHP default timezone invalid issue is fixed.
