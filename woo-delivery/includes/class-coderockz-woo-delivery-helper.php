@@ -119,9 +119,15 @@ if ( !class_exists( 'Coderockz_Woo_Delivery_Helper' ) ) {
                     $downloadable_products += 1;
                 }
 
+                if( $is_virtual == 'yes' && $is_downloadable == 'yes') {
+                    $virtual_products -= 1;
+                }
+
             }
 
             $total_virtual_downloadable_products = $virtual_products + $downloadable_products;
+
+
 
             /*if( count($products) == $virtual_products || count($products) == $downloadable_products || count($products) == $total_virtual_downloadable_products) {
             $has_virtual_downloadable_products = true;

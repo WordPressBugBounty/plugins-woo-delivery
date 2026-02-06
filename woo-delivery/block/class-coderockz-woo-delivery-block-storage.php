@@ -62,13 +62,13 @@ class Coderockz_Woo_Delivery_Block_Storage {
             } else {
                 update_post_meta( $order_id, 'delivery_type', sanitize_text_field( $data['order_type'] ) );
             }
-        } elseif ( !$settings['enable_delivery_option'] && ( ( $settings['enable_delivery_time'] && !$settings['enable_pickup_time'] ) || ( $settings['enable_delivery_date'] && !$settings['enable_pickup_date'] ) ) && !empty( $data['delivery_time'] ) ) {
+        } elseif ( !$settings['enable_delivery_option'] && ( ( $settings['enable_delivery_time'] && !$settings['enable_pickup_time'] ) || ( $settings['enable_delivery_date'] && !$settings['enable_pickup_date'] ) ) ) {
             if ( $hpos ) {
                 $order->update_meta_data( 'delivery_type', 'delivery' );
             } else {
                 update_post_meta( $order_id, 'delivery_type', 'delivery' );
             }
-        } elseif ( !$settings['enable_delivery_option'] && ( ( !$settings['enable_delivery_time'] && $settings['enable_pickup_time'] ) || ( !$settings['enable_delivery_date'] && $settings['enable_pickup_date'] ) ) && !empty( $data['pickup_time'] ) ) {
+        } elseif ( !$settings['enable_delivery_option'] && ( ( !$settings['enable_delivery_time'] && $settings['enable_pickup_time'] ) || ( !$settings['enable_delivery_date'] && $settings['enable_pickup_date'] ) ) ) {
             if ( $hpos ) {
                 $order->update_meta_data( 'delivery_type', 'pickup' );
             } else {

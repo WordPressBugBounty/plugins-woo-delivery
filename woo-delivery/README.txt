@@ -3,8 +3,8 @@ Contributors: CodeRockz
 Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery & Pickup Date Time for WooCommerce 
 Requires at least: 4.0.1
-Tested up to: 6.8
-Stable tag: 1.3.72
+Tested up to: 6.9
+Stable tag: 1.3.77
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,16 @@ To make your journey with us more easier & error free, We’ve a dedicated team.
 
 == PRO Version Features ==
 
-**Time Zone Based Delivery Information:** Delivery information like date, time set based on the selected timezone. 
+**Time Zone Based Delivery Information:** Delivery information like date, time set based on the selected timezone.
+
+**Block Checkout Page Compatibility:** Our plugin is now fully compatible with latest **WooCommerce block checkout page** along with the classic checkout  page. Our plugin is also compatible with the Divi Builder and Elementor. 
+
+**HPOS Compatibility:** Our plugin is now fully compatible with High
+performance order storage(HPOS).
+
+**Disable Same Day Delivery/Pickup:** You can now disable same day delivery/pickup from our plugin.
+
+**Hide Shipping Address Section When Pickup:** When you select pickup from our plugin/shipping options, the shipping address section will autometically be hidden from the checkout page.
 
 **Advance Settings Option for Date & Time:** You can enable or disable the date and time field in the checkout page. Also, you can make them mandatory or optional. You can choose your desired date or time format. The weekend option is also available. You can also control maximum delivery/pickup per day or maximum (delivery+ pickup) per day.
 
@@ -178,6 +187,21 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.77 =
+* Tweak: Remove unnecessary code.
+
+= 1.3.76 =
+* Fixed: Show Plugin Module For (Virtual/Downloadable + Regular) Products option is not working if product has both virtual and downloadable attribute
+
+= 1.3.75 =
+* Tweak: Compatability check with WC v10.3.6 & WP v6.9
+
+= 1.3.74 =
+* Fixed: Translation issue is fixed.(Ref. https://wordpress.org/support/topic/translation-issue-211/)
+
+= 1.3.73 =
+* Fixed: Delivery type is not saved as meta data with the order is fixed.
 
 = 1.3.72 =
 * Fixed: Compatability issue with WC v10.2.1 is fixed.

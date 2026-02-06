@@ -947,6 +947,26 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <th width="25%" style="text-align: center;font-size:18px">PRO</th>
 					    </tr>
 					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Block Checkout Page Compatibility</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">HPOS Compatibility</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Hide Shipping Address Section for Pickup</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Disable same day Delivery/Pickup</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Delivery Date</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
@@ -977,11 +997,15 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Field Position Setting</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Plugin Field Position</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
-					    
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Wide variety of Plugin Field Position</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
 					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">All Texts are Translatable</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
@@ -991,16 +1015,6 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-feature">Change Delivery Details from Order Page</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">HPOS Compatibility</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Block Checkout Page Compatibility</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><b>Introduce Soon</b><br/><span style="color: #bbb;font-size: 11px;font-style: italic;">(Depending on block checkout page development)</span></td>
 					    </tr>
 					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Pickup Location</td>

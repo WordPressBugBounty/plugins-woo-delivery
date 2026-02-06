@@ -139,7 +139,7 @@ class Coderockz_Woo_Delivery_Public {
 
     }
 
-    public function dequeue_salient_theme_hoverintent_script() {
+    /*public function dequeue_salient_theme_hoverintent_script() {
         if ( is_checkout() && !( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) ) ) {
 
             $theme_name = esc_html( wp_get_theme()->get( 'Name' ) );
@@ -148,7 +148,7 @@ class Coderockz_Woo_Delivery_Public {
                 wp_dequeue_script( 'hoverintent' );
             }
         }
-    }
+    }*/
 
     // This function adds the delivery time and delivery date fields and it's functionalities
     public function coderockz_woo_delivery_add_custom_field() {
@@ -836,13 +836,13 @@ class Coderockz_Woo_Delivery_Public {
             } else {
                 update_post_meta( $order_id, 'delivery_type', $_POST['coderockz_woo_delivery_delivery_selection_box'] );
             }
-        } elseif ( !$enable_delivery_option && ( ( $enable_delivery_time && !$enable_pickup_time ) || ( $enable_delivery_date && !$enable_pickup_date ) ) && $_POST['coderockz_woo_delivery_time_field'] != "" && !$has_virtual_downloadable_products ) {
+        } elseif ( !$enable_delivery_option && ( ( $enable_delivery_time && !$enable_pickup_time ) || ( $enable_delivery_date && !$enable_pickup_date ) ) && !$has_virtual_downloadable_products ) {
             if ( $this->hpos ) {
                 $order->update_meta_data( 'delivery_type', 'delivery' );
             } else {
                 update_post_meta( $order_id, 'delivery_type', 'delivery' );
             }
-        } elseif ( !$enable_delivery_option && ( ( !$enable_delivery_time && $enable_pickup_time ) || ( !$enable_delivery_date && $enable_pickup_date ) ) && $_POST['coderockz_woo_delivery_pickup_time_field'] != "" && !$has_virtual_downloadable_products ) {
+        } elseif ( !$enable_delivery_option && ( ( !$enable_delivery_time && $enable_pickup_time ) || ( !$enable_delivery_date && $enable_pickup_date ) ) && !$has_virtual_downloadable_products ) {
             if ( $this->hpos ) {
                 $order->update_meta_data( 'delivery_type', 'pickup' );
             } else {

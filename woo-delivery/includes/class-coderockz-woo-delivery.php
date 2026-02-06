@@ -223,7 +223,7 @@ class Coderockz_Woo_Delivery {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 0 );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'dequeue_salient_theme_hoverintent_script', 99999 );
+		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'dequeue_salient_theme_hoverintent_script', 99999 );
 
 		$this->loader->add_action( 'init', $plugin_public, 'coderockz_woo_delivery_init_functionality' );
 
