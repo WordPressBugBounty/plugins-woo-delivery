@@ -4,7 +4,7 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery & Pickup Date Time for WooCommerce 
 Requires at least: 4.0.1
 Tested up to: 6.9
-Stable tag: 1.3.77
+Stable tag: 1.3.78
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -188,6 +188,9 @@ e.g.
 
 == Changelog ==
 
+= 1.3.78 =
+* Tweak: Compatibility check with WC v10.5.2
+
 = 1.3.77 =
 * Tweak: Remove unnecessary code.
 
@@ -195,7 +198,7 @@ e.g.
 * Fixed: Show Plugin Module For (Virtual/Downloadable + Regular) Products option is not working if product has both virtual and downloadable attribute
 
 = 1.3.75 =
-* Tweak: Compatability check with WC v10.3.6 & WP v6.9
+* Tweak: Compatibility check with WC v10.3.6 & WP v6.9
 
 = 1.3.74 =
 * Fixed: Translation issue is fixed.(Ref. https://wordpress.org/support/topic/translation-issue-211/)
@@ -204,22 +207,22 @@ e.g.
 * Fixed: Delivery type is not saved as meta data with the order is fixed.
 
 = 1.3.72 =
-* Fixed: Compatability issue with WC v10.2.1 is fixed.
+* Fixed: Compatibility issue with WC v10.2.1 is fixed.
 
 = 1.3.71 =
 * Fixed: Plugin deactivation button not working.
 
 = 1.3.70 =
 * Fixed: PHP default timezone invalid issue is fixed.
-* Tweak: Compatability check with WC v9.9 & WP v6.8
+* Tweak: Compatibility check with WC v9.9 & WP v6.8
 
 = 1.3.69 =
 * Fixed: Block checkout page compatibility issue is fixed.
 * Fixed: YOOtheme compatibility issue is fixed.
-* Tweak: Compatability check with WC v9.4 & WP v6.7
+* Tweak: Compatibility check with WC v9.4 & WP v6.7
 
 = 1.3.68 =
-* Tweak: Compatability check with WC 9.3 & WP 6.6
+* Tweak: Compatibility check with WC 9.3 & WP 6.6
 
 = 1.3.67 =
 * Fixed: Plugin is showing for variable downloadable products.
@@ -237,10 +240,10 @@ e.g.
 * fixed: Dropdown is showing at the bottom of the page.
 
 = 1.3.62 =
-* Tweak: Compatability check with WC 8.2
+* Tweak: Compatibility check with WC 8.2
 
 = 1.3.61 =
-* Tweak: Compatability check with WordPress 6.3
+* Tweak: Compatibility check with WordPress 6.3
 
 = 1.3.60 =
 * Tweak: Make the plugin compatible with Woocommerce HPOS.
@@ -255,7 +258,7 @@ e.g.
 * Tweak: Update the plugin description.
 
 = 1.3.56 =
-* Tweak: Compatability check with WC 7.8
+* Tweak: Compatibility check with WC 7.8
 
 = 1.3.55 =
 * Fixed: PHP warning v8 fixed.
@@ -264,34 +267,34 @@ e.g.
 * Tweak: Update pro verion features on README.txt.
 
 = 1.3.53 =
-* Tweak: Compatability check with WC 7.7
+* Tweak: Compatibility check with WC 7.7
 
 = 1.3.52 =
-* Tweak: Compatability check with WordPress 6.2
+* Tweak: Compatibility check with WordPress 6.2
 
 = 1.3.51 =
-* Tweak: Compatability check with WC 7.6
+* Tweak: Compatibility check with WC 7.6
 
 = 1.3.50 =
-* Tweak: Update pro verion features on plugin settings page.
+* Tweak: Update pro version features on plugin settings page.
 
 = 1.3.49 =
 * Tweak: Update the comparison of plugin feature between PRO and free version.
 
 = 1.3.48 =
-* Tweak: Compatability check with WC 7.4
+* Tweak: Compatibility check with WC 7.4
 
 = 1.3.47 =
 * fixed: Flatsome parent theme check when enqueue script for flatsome theme
 
 = 1.3.46 =
-* Tweak: Compatability check with WordPress 6.1
+* Tweak: Compatibility check with WordPress 6.1
 
 = 1.3.45 =
 * Fixed: Fix compatibility issue with Rental Products by 99w.
 
 = 1.3.44 =
-* Tweak: Compatability check with WC 7.2
+* Tweak: Compatibility check with WC 7.2
 
 = 1.3.43 =
 * Fixed: Salient theme compatibility issue fixed.
@@ -300,10 +303,10 @@ e.g.
 * Fixed: Plugin module is not showing on single order page.
 
 = 1.3.41 =
-* Tweak: Update pro verion features on plugin settings page.
+* Tweak: Update pro version features on plugin settings page.
 
 = 1.3.40 =
-* Tweak: Update pro verion features on plugin settings page.
+* Tweak: Update pro version features on plugin settings page.
 
 = 1.3.39 =
 * Tweak: Remove redundant code.
@@ -315,34 +318,34 @@ e.g.
 * Tweak: Update the plugin description.
 
 = 1.3.36 =
-* Tweak: Update pro verion features on plugin settings page.
+* Tweak: Update pro version features on plugin settings page.
 
 = 1.3.35 =
-* Tweak: Compatability check with WC 6.8
+* Tweak: Compatibility check with WC 6.8
 
 = 1.3.34 =
 * Fixed: Fixed jquery dependency for some theme.
 
 = 1.3.33 =
-* Tweak: Compatability check with WC 6.7
+* Tweak: Compatibility check with WC 6.7
 
 = 1.3.32 =
 * Fixed: Pickup/delivery date is showing wrong when update and both delivery and pickup date exists.
 
 = 1.3.31 =
-* Tweak: Compatability issue check with WordPress v6.0
+* Tweak: Compatibility issue check with WordPress v6.0
 
 = 1.3.30 =
 * Tweak: Change plugin description.
 
 = 1.3.29 =
-* Tweak: Compatability check with WC 6.4
+* Tweak: Compatibility check with WC 6.4
 
 = 1.3.28 =
 * Tweak: Update the feature list.
 
 = 1.3.27 =
-* Tweak: Compatability issue with WordPress v5.9
+* Tweak: Compatibility issue with WordPress v5.9
 
 = 1.3.26 =
 * Fixed: Warning on plugin settings page on PHP v8 fixed.
@@ -351,7 +354,7 @@ e.g.
 * Tweak: Change pro plugin specification description..
 
 = 1.3.24 =
-* Added: Delivery informaion to cloudprinter plugin added.
+* Added: Delivery information to cloud printer plugin added.
 
 = 1.3.23 =
 * Added: Add nl translation for settings page.
@@ -360,7 +363,7 @@ e.g.
 * Added: Modify the features list and update the README.txt.
 
 = 1.3.21 =
-* Tweak: Compatability issue with WC 6.0
+* Tweak: Compatibility issue with WC 6.0
 
 = 1.3.20 =
 * Fixed: Uncaught Error: Call to undefined method Coderockz_Woo_Delivery_Helper :: weekday_conversion_to_locale () for invoice plugin.
@@ -372,10 +375,10 @@ e.g.
 * Added: Modify the features list.
 
 = 1.3.17 =
-* Tweak: Compatability issue with WC 5.8.2
+* Tweak: Compatibility issue with WC 5.8.2
 
 = 1.3.16 =
-* Added: Delivery informaion to packing slip added.
+* Added: Delivery information to packing slip added.
 
 = 1.3.15 =
 * Fixed: Plugin deactivation button not working.
@@ -384,10 +387,10 @@ e.g.
 * Tweak: Add new description for delivery tips option.
 
 = 1.3.13 =
-* Fixed: Auto select date is not working for some timezone
+* Fixed: Auto select date is not working for some time zone
 
 = 1.3.12 =
-* Tweak: Compatability with WC 5.8
+* Tweak: Compatibility with WC 5.8
 
 = 1.3.11 =
 * Tweak: Remove the deactivation popup.
@@ -396,7 +399,7 @@ e.g.
 * Tweak: Increase the cookie time for delivery option.
 
 = 1.3.9 =
-* Tweak: Compatability with WC 5.7
+* Tweak: Compatibility with WC 5.7
 
 = 1.3.8 =
 * Fixed: Divi theme compatibility code will execute when only Divi theme is activated.
@@ -417,19 +420,19 @@ e.g.
 * Fixed: Compatibility issue with plugin WooCommerce Checkout Manager by Quadlayer fixed.
 
 = 1.3.2 =
-* Fixed: Previous day is selectable for some timezone.
+* Fixed: Previous day is selectable for some time zone.
 
 = 1.3.1 =
 * Added: Add new plugin Feature
 
 = 1.2.99 =
-* Tweak: Compatability with WC 5.5
+* Tweak: Compatibility with WC 5.5
 
 = 1.2.98 =
 * Tweak: Added new feature list.
 
 = 1.2.97 =
-* Tweak: Compatability with WordPress 5.8
+* Tweak: Compatibility with WordPress 5.8
 
 = 1.2.96 =
 * Fixed: Wrong text domain detect for different language.
@@ -444,7 +447,7 @@ e.g.
 * Added: Add new plugin Feature
 
 = 1.2.92 =
-* Tweak: Compatability with WC 5.4
+* Tweak: Compatibility with WC 5.4
 
 = 1.2.91 =
 * Fixed: Auto select first available time is not working on IOS Safari web browser.
@@ -456,7 +459,7 @@ e.g.
 * Tweak: Remove redundant code from the admin file.
 
 = 1.2.88 =
-* Tweak: Compatability with WC v5.3
+* Tweak: Compatibility with WC v5.3
 
 = 1.2.87 =
 * Tweak: Remove unnecessary methods from the public file.
@@ -489,13 +492,13 @@ e.g.
 * Tweak: Remove the order type from order confirmation page and emails.
 
 = 1.2.77 =
-* Tweak: Compatability with WC v5.1 & WP v5.7
+* Tweak: Compatibility with WC v5.1 & WP v5.7
 
 = 1.2.76 =
 * Added: Heading of the plugin module added.
 
 = 1.2.75 =
-* Tweak: Compatability with WC 5.0
+* Tweak: Compatibility with WC 5.0
 
 = 1.2.74 =
 * Added: Custom CSS box added.
@@ -507,7 +510,7 @@ e.g.
 * Tweak: Not removing the settings after delete.
 
 = 1.2.71 =
-* Tweak: Compatability with WC 4.9
+* Tweak: Compatibility with WC 4.9
 
 = 1.2.70 =
 * Tweak: Remove delivery date format label from admin settings.
@@ -609,7 +612,7 @@ Fixed: Checkout page is not loaded after updating the latest WP v5.6 for some th
 * Added: Option for choose from delivery or pickup added.
 
 = 1.2.38 =
-* Fixed: Timezone select field css bug fixed.
+* Fixed: Time zone select field CSS bug fixed.
 
 = 1.2.37 =
 * Tweak: New features added.
