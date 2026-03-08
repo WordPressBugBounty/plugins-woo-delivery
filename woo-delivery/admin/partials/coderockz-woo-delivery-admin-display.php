@@ -95,16 +95,7 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 	                        	<input id="coderockz_woo_delivery_option_pickup_label" name="coderockz_woo_delivery_option_pickup_label" type="text" class="coderockz-woo-delivery-input-field" value="<?php echo (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? stripslashes($delivery_option_settings['pickup_label']) : "" ?>" placeholder="" autocomplete="off"/>
 	                    	</div>
 	                    	<div class="coderockz-woo-delivery-form-group">
-	                        	<span class="coderockz-woo-delivery-form-label"><?php _e('Dynamically Enable/Disable Delivery/Pickup Based on WooCommerce Shipping', 'woo-delivery'); ?></span>
-	                        	<p class="coderockz-woo-delivery-tooltip" tooltip="Enable it if you want to see the delivery or pickup option based on your WoCommerce Shipping. Default is disable."><span class="dashicons dashicons-editor-help"></span></p>
-							    <label class="coderockz-woo-delivery-toogle-switch" for="coderockz_woo_delivery_enable_dynamic_order_type">
-							       <input type="checkbox" name="coderockz_woo_delivery_enable_dynamic_order_type" id="coderockz_woo_delivery_enable_dynamic_order_type" class="coderockz_woo_delivery_enable_dynamic_order_type"/>
-							       <div class="coderockz-woo-delivery-toogle-slider coderockz-woo-delivery-toogle-round"></div>
-							    </label>
-	                    	</div>
-
-	                    	<div class="coderockz-woo-delivery-form-group">
-	                        	<span class="coderockz-woo-delivery-form-label"><?php _e('Dynamically Change Shipping Method Based on Delivery/Pickup', 'woo-delivery'); ?></span>
+	                        	<span class="coderockz-woo-delivery-form-label" style="width:30%!important;"><?php _e('Dynamically Enable/Disable Delivery/Pickup Based on WooCommerce Shipping', 'woo-delivery'); ?><span style="font-size: 11px;font-style: italic;color: lightseagreen;display:block;">( <?php _e('To know more about the feature: ', 'coderockz-woo-delivery'); ?><a href="https://coderockz.com/documentations/dynamically-enable-disable-delivery-pickup-based-on-woocommerce-shipping/" target="_blank">Click here</a> )</span></span>
 	                        	<p class="coderockz-woo-delivery-tooltip" tooltip="Enable it if you want to see the delivery or pickup option based on your WoCommerce Shipping. Default is disable."><span class="dashicons dashicons-editor-help"></span></p>
 							    <label class="coderockz-woo-delivery-toogle-switch" for="coderockz_woo_delivery_enable_dynamic_order_type">
 							       <input type="checkbox" name="coderockz_woo_delivery_enable_dynamic_order_type" id="coderockz_woo_delivery_enable_dynamic_order_type" class="coderockz_woo_delivery_enable_dynamic_order_type"/>

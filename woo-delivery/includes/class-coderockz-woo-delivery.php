@@ -188,24 +188,19 @@ class Coderockz_Woo_Delivery {
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_pickup_time_form', $plugin_admin, 'coderockz_woo_delivery_process_pickup_time_form' );
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_localization_settings', $plugin_admin, 'coderockz_woo_delivery_process_localization_settings' );
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_process_other_settings', $plugin_admin, 'coderockz_woo_delivery_process_other_settings' );
-		
 		$this->loader->add_filter('manage_edit-shop_order_columns', $plugin_admin, "coderockz_woo_delivery_add_custom_fields_orders_list");
 		$this->loader->add_action('manage_shop_order_posts_custom_column', $plugin_admin, "coderockz_woo_delivery_show_custom_fields_data_orders_list");
-
 		$this->loader->add_filter('manage_woocommerce_page_wc-orders_columns', $plugin_admin, "coderockz_woo_delivery_add_custom_fields_orders_list");
 		$this->loader->add_action('woocommerce_shop_order_list_table_custom_column', $plugin_admin, "coderockz_woo_delivery_show_custom_fields_data_orders_list_hpos", 10, 2 );
-		
 		$this->loader->add_action( 'woocommerce_admin_order_data_after_shipping_address', $plugin_admin, 'coderockz_woo_delivery_information_after_shipping_address', 10, 1 );
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'coderockz_woo_delivery_review_notice' );
-        $this->loader->add_action('wp_ajax_coderockz_woo_delivery_save_review_notice', $plugin_admin, 'coderockz_woo_delivery_save_review_notice');
-        $this->loader->add_action("add_meta_boxes", $plugin_admin, 'coderockz_woo_delivery_custom_meta_box');
-        $this->loader->add_action('wp_ajax_coderockz_woo_delivery_meta_box_get_orders', $plugin_admin, 'coderockz_woo_delivery_meta_box_get_orders');
-        $this->loader->add_action('wp_ajax_coderockz_woo_delivery_meta_box_get_orders_pickup', $plugin_admin, 'coderockz_woo_delivery_meta_box_get_orders_pickup');
-        $this->loader->add_action('wp_ajax_coderockz_woo_delivery_save_meta_box_information', $plugin_admin, 'coderockz_woo_delivery_save_meta_box_information');
-
-        $this->loader->add_filter( 'get_user_option_meta-box-order_shop_order', $plugin_admin, 'override_post_meta_box_order' );
-
-        $this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_admin_disable_max_delivery_pickup_date', $plugin_admin, 'coderockz_woo_delivery_admin_disable_max_delivery_pickup_date' );
+        	$this->loader->add_action('wp_ajax_coderockz_woo_delivery_save_review_notice', $plugin_admin, 'coderockz_woo_delivery_save_review_notice');
+        	$this->loader->add_action("add_meta_boxes", $plugin_admin, 'coderockz_woo_delivery_custom_meta_box');
+        	$this->loader->add_action('wp_ajax_coderockz_woo_delivery_meta_box_get_orders', $plugin_admin, 'coderockz_woo_delivery_meta_box_get_orders');
+       	 	$this->loader->add_action('wp_ajax_coderockz_woo_delivery_meta_box_get_orders_pickup', $plugin_admin, 'coderockz_woo_delivery_meta_box_get_orders_pickup');
+        	$this->loader->add_action('wp_ajax_coderockz_woo_delivery_save_meta_box_information', $plugin_admin, 'coderockz_woo_delivery_save_meta_box_information');
+       		$this->loader->add_filter( 'get_user_option_meta-box-order_shop_order', $plugin_admin, 'override_post_meta_box_order' );
+        	$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_admin_disable_max_delivery_pickup_date', $plugin_admin, 'coderockz_woo_delivery_admin_disable_max_delivery_pickup_date' );
 
 	}
 
@@ -255,7 +250,6 @@ class Coderockz_Woo_Delivery {
 		//$this->loader->add_action('woocommerce_checkout_process', $plugin_public, 'coderockz_woo_delivery_customise_checkout_field_process');
 		$this->loader->add_action('woocommerce_after_checkout_validation', $plugin_public, 'coderockz_woo_delivery_customise_checkout_field_process');
 		$this->loader->add_action('woocommerce_checkout_update_order_meta', $plugin_public, 'coderockz_woo_delivery_customise_checkout_field_update_order_meta');
-
 		$this->loader->add_action('wp_ajax_coderockz_woo_delivery_get_time_in_format', $plugin_public, 'coderockz_woo_delivery_get_time_in_format');
 		$this->loader->add_action('wp_ajax_nopriv_coderockz_woo_delivery_get_time_in_format', $plugin_public, 'coderockz_woo_delivery_get_time_in_format');
 		$this->loader->add_action('wp_ajax_coderockz_woo_delivery_get_orders', $plugin_public, 'coderockz_woo_delivery_get_orders');
@@ -264,23 +258,17 @@ class Coderockz_Woo_Delivery {
 		$this->loader->add_action('wp_ajax_nopriv_coderockz_woo_delivery_get_orders_pickup', $plugin_public, 'coderockz_woo_delivery_get_orders_pickup');
 		$this->loader->add_filter( 'woocommerce_account_orders_columns', $plugin_public, 'coderockz_woo_delivery_add_account_orders_column', 10, 1 );
 		$this->loader->add_action( "woocommerce_my_account_my_orders_column_order_delivery_details", $plugin_public, "coderockz_woo_delivery_show_delivery_details_my_account_tab");
-
 		$this->loader->add_filter( 'woocommerce_order_data_store_cpt_get_orders_query', $plugin_public, 'coderockz_woo_delivery_handle_custom_query_var', 10, 2 );
-
 		$this->loader->add_filter( 'woocommerce_get_order_item_totals', $plugin_public, 'coderockz_woo_delivery_add_delivery_information_row', 10, 2 );
-
+		$this->loader->add_filter( 'woocommerce_package_rates', $plugin_public, 'hide_show_shipping_methods_based_on_selection', 100, 2 );
+		$this->loader->add_action( 'woocommerce_checkout_update_order_review', $plugin_public, 'coderockz_woo_delivery_refresh_shipping_methods', 10, 1 );
 		$this->loader->add_action('wp_ajax_coderockz_woo_delivery_option_delivery_time_pickup', $plugin_public, 'coderockz_woo_delivery_option_delivery_time_pickup');
 		$this->loader->add_action('wp_ajax_nopriv_coderockz_woo_delivery_option_delivery_time_pickup', $plugin_public, 'coderockz_woo_delivery_option_delivery_time_pickup');
-
 		$this->loader->add_action( 'wp_ajax_coderockz_woo_delivery_disable_max_delivery_pickup_date', $plugin_public, 'coderockz_woo_delivery_disable_max_delivery_pickup_date' );
 		$this->loader->add_action( 'wp_ajax_nopriv_coderockz_woo_delivery_disable_max_delivery_pickup_date', $plugin_public, 'coderockz_woo_delivery_disable_max_delivery_pickup_date' );
-
 		$this->loader->add_action( 'wp_footer', $plugin_public,'coderockz_woo_delivery_load_custom_css', 50000);
-
 		$this->loader->add_filter( 'woocommerce_form_field_select', $plugin_public, 'coderockz_woo_delivery_prevent_field_value_change', 20, 4 );
-
 		$this->loader->add_action( 'wpi_after_formatted_shipping_address', $plugin_public, 'coderockz_woo_delivery_info_at_wpi_invoice', 10, 1 );
-
 		$this->loader->add_action( 'woocommerce_cloudprint_internaloutput_footer', $plugin_public, 'coderockz_woo_delivery_cloud_print_fields' );
 
 	}

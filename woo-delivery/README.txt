@@ -4,11 +4,11 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, Delivery & Pickup Date Time for WooCommerce 
 Requires at least: 4.0.1
 Tested up to: 6.9
-Stable tag: 1.3.78
+Stable tag: 1.3.79
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Gives the facility of selecting delivery/pickup date and time at order checkout page.
+Gives the facility of selecting delivery/pickup/both date/time/both at order checkout page.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Gives the facility of selecting delivery/pickup date and time at order checkout 
 
 == Support ==
 
-To make your journey with us more easier & error free, We’ve a dedicated team. So, if you use our plugin or facing any problem feel free to contact with us by going to our <a target="_blank" href="https://coderockz.com/support/">support page</a>.
+To make your journey with us more easier & error free, We’ve a dedicated team. So, if you use our plugin or facing any problem feel free to contact with us by going to our <a target="_blank" href="https://coderockz.com/support/">support page</a> or directly email us at **support@coderockz.com**
 
 == PRO Version Features ==
 
@@ -187,6 +187,9 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.79 =
+* Added: Changing WooCommerce Shipping Methods Based on Delivery/Pickup.
 
 = 1.3.78 =
 * Tweak: Compatibility check with WC v10.5.2
