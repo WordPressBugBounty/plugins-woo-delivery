@@ -1216,7 +1216,13 @@ public function hide_show_shipping_methods_based_on_selection( $available_shippi
 		) {
 				return $available_shipping_methods;
 		}
-		
+
+
+        $delivery_option_settings = get_option( 'coderockz_woo_delivery_option_delivery_settings' );
+        $enable_delivery_option = ( isset( $delivery_option_settings['enable_option_time_pickup'] ) && !empty( $delivery_option_settings['enable_option_time_pickup'] ) ) ? $delivery_option_settings['enable_option_time_pickup'] : false;
+        if(!$enable_delivery_option) {
+            return $available_shipping_methods;
+        }
 
 
 		if(isset($_COOKIE['coderockz_woo_delivery_option_time_pickup'])) {
