@@ -103,6 +103,24 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 							    </label>
 	                    	</div>
 
+	                    	<div class="coderockz-woo-delivery-form-group">
+	                        	<span class="coderockz-woo-delivery-form-label" style="width:30%!important;"><?php _e('Dynamically Change Shipping Method Based on Delivery/Pickup', 'woo-delivery'); ?><span style="font-size: 11px;font-style: italic;color: lightseagreen;display:block;">( <?php _e('To see how it works: ', 'coderockz-woo-delivery'); ?><a href="https://coderockz.com/woocommerce_shipping_methods_changed_on_delivey_pickup.gif" target="_blank">Click here</a> )</span></span>
+	                        	<p class="coderockz-woo-delivery-tooltip" tooltip=""><span class="dashicons dashicons-editor-help"></span></p>
+							    <label class="coderockz-woo-delivery-toogle-switch" for="coderockz_woo_delivery_enable_dynamic_order_type">
+							       <input type="checkbox" name="coderockz_woo_delivery_enable_dynamic_order_type" id="coderockz_woo_delivery_enable_dynamic_order_type" class="coderockz_woo_delivery_enable_dynamic_order_type"/>
+							       <div class="coderockz-woo-delivery-toogle-slider coderockz-woo-delivery-toogle-round"></div>
+							    </label>
+	                    	</div>
+
+	                    	<div class="coderockz-woo-delivery-form-group">
+	                        	<span class="coderockz-woo-delivery-form-label" style="width:30%!important;"><?php _e('Hide Shipping Address Section When Selecting Pickup', 'woo-delivery'); ?><span style="font-size: 11px;font-style: italic;color: lightseagreen;display:block;">( <?php _e('To see how it works: ', 'coderockz-woo-delivery'); ?><a href="https://coderockz.com/hide_shipping_address_when_pickup.gif" target="_blank">Click here</a> )</span></span>
+	                        	<p class="coderockz-woo-delivery-tooltip" tooltip=""><span class="dashicons dashicons-editor-help"></span></p>
+							    <label class="coderockz-woo-delivery-toogle-switch" for="coderockz_woo_delivery_enable_dynamic_order_type">
+							       <input type="checkbox" name="coderockz_woo_delivery_enable_dynamic_order_type" id="coderockz_woo_delivery_enable_dynamic_order_type" class="coderockz_woo_delivery_enable_dynamic_order_type"/>
+							       <div class="coderockz-woo-delivery-toogle-slider coderockz-woo-delivery-toogle-round"></div>
+							    </label>
+	                    	</div>
+
 	                        <input class="coderockz-woo-delivery-submit-btn" type="submit" name="coderockz_delivery_delivery_option_form_submit" value="<?php _e('Save Changes', 'woo-delivery'); ?>" />
 
 	                    </form>
@@ -958,33 +976,23 @@ $store_location_timezone = isset($time_settings['store_location_timezone']) && $
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Delivery Date</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Delivery Time</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Individual Pickup Date</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Individual Pickup Time</td>
-					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
-					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
-					    </tr>
-					    <tr>
 					        <td class="coderockz-woo-delivery-proFree-feature">Option for Selecting Home Delivery or Self Pickup</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
-					        <td class="coderockz-woo-delivery-proFree-feature">Holidays</td>
+					        <td class="coderockz-woo-delivery-proFree-feature">Separate Holidays for Delivery and Pickup</td>
 					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-yes"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Maximum Delivery/Pickup/(Delivery + Pickup) Order Per Day</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
+					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
+					    </tr>
+					    <tr>
+					        <td class="coderockz-woo-delivery-proFree-feature">Maximum Delivery or Pickup Order Per Timeslot</td>
+					        <td class="coderockz-woo-delivery-proFree-free"><span class="dashicons dashicons-no-alt"></span></td>
 					        <td class="coderockz-woo-delivery-proFree-pro"><span class="dashicons dashicons-yes"></span></td>
 					    </tr>
 					    <tr>
