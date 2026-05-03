@@ -4,7 +4,7 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, WooCommerce Delivery & Pickup Date Time 
 Requires at least: 4.0.1
 Tested up to: 6.9
-Stable tag: 1.3.82
+Stable tag: 1.3.83
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,29 +12,29 @@ Let customers choose delivery or pickup date and time directly on the WooCommerc
 
 == Description ==
 
-<p><b>Delivery & Pickup Date Time for WooCommerce</b> is one of the best WooCommerce delivery date and time plugins, allowing customers to easily choose their preferred delivery or pickup schedule directly on the checkout page. This flexible WooCommerce delivery scheduler plugin lets store owners create and manage multiple pickup locations, giving customers the convenience of collecting orders from their preferred location.</p>
+<p>Delivery & Pickup Date Time for WooCommerce is one of the best WooCommerce order delivery date and time plugins, allowing customers to easily choose their preferred delivery or pickup schedule directly on the checkout page. This flexible WooCommerce delivery scheduler plugin lets store owners create and manage multiple pickup locations, giving customers the convenience of collecting orders from their preferred location.</p>
 
 <p>With this WooCommerce delivery date plugin, store owners have full control over delivery and pickup schedules, including the ability to edit selected dates and times from the order page and notify customers of any changes via email.</p>
 
-<p>This woocommerce delivery date picker plugin is simple to set up, user-friendly, and fully compatible with your theme’s styling—so you don’t need any extra customization. Whether you offer delivery, pickup, or both, this plugin helps streamline order management and improve customer satisfaction. If the question is "how to add a delivery date to the WooCommerce checkout page," then this plugin is the answer.</p>
+<p>This WooCommerce delivery date picker plugin is simple to set up, user-friendly, and fully compatible with your theme’s styling—so you don’t need any extra customization. Whether you offer delivery, pickup, or both, this plugin helps streamline order management and improve customer satisfaction. If the question is "how to add a delivery date to the WooCommerce checkout page," then this plugin is the answer.</p>
 
 <br/>
-<h4>Free version only has the basic setup of WooCommerce delivery or pickup date and time.</h4>
-<h4><b><a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">Pro Version</a></b> has many more additional delivery or pickup date, time and pickup location features that you can't imagine</h4>
-<h4>To see live demo of <b>Pro Version </b><a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">click here</a> and go to the live demo tab for the login details</h4>
+<h4>The free version provides basic delivery and pickup date and time functionality for WooCommerce.</h4>
+<h4>The <b><a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">Pro version</a></b> offers a wide range of advanced features for managing delivery and pickup date, time, and locations.</h4>
+<h4>To see live demo of <b>Pro version </b><a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">click here</a> and go to the live demo tab for the login details</h4>
 <br/>
 
 == Support ==
 
 To make your journey more easier & error free, We’ve a dedicated support team. If you are using our plugin and facing any issues, feel free to contact us by going to our <a target="_blank" href="https://coderockz.com/support/">support page</a> or directly email us at **support@coderockz.com**
 
-<b>Read the reviews to know who responsive and helpful our support team is!</b>
+**Read the reviews to know how responsive and helpful our support team is!**
 
 == PRO Version Features ==
 
-Here are some of the powerful features listed below. This WooCommerce delivery date plugin includes many more features—visit the <a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">plugin page</a> to explore them all.
+Here are some of the powerful features listed below. This WooCommerce delivery date plugin includes many more features. Visit the <a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">plugin page</a> to explore them all.
 
-✅ **Time Zone Based Delivery Information:** Delivery/Pickup information like date, time will be saved based on WordPress selected timezone.
+✅ **Time Zone Based Delivery Information:** Delivery/Pickup information like date, time will be saved based on WordPress selected time zone.
 
 ✅ **Block Checkout Page Compatibility:** This WooCommerce delivery date time plugin is fully compatible with latest **WooCommerce block checkout page** along with the classic checkout page. Also this plugin is compatible with the Divi Builder, Elementor, CartFlows and almost every page builder. 
 
@@ -42,34 +42,48 @@ Here are some of the powerful features listed below. This WooCommerce delivery d
 
 ✅ **Disable Same Day Delivery/Pickup:** You can disable same day delivery/pickup from the plugin settings.
 
-✅ **Hide Shipping Address Section When Pickup:** When customers select pickup from the plugin/shipping options, the shipping address section will autometically be hidden from the checkout page, only billing address section is available.
+✅ **Hide Shipping Address Section When Pickup:** By this WooCommerce delivery and pickup date time plugin, when customers select pickup from the plugin/shipping options, the shipping address section will automatically be hidden from the checkout page, only billing address section is available. To see how it works in a video, <a target="_blank" href="https://coderockz.com/hide_shipping_address_when_pickup.gif">click here</a>
 
-✅ **WooCommerce shipping methods automatically changed based on Delivey/Pickup:** After installing the PRO version of WooCommerce delivery and pickup date time plugin, the shipping method of WooCommerce will be automatically changed based on customers delivery or pickup selection. To see how it works in a video, <a target="_blank" href="https://coderockz.com/woocommerce_shipping_methods_changed_on_delivey_pickup.gif">click here</a>
+✅ **WooCommerce shipping methods automatically changed based on Delivery/Pickup:** After installing the PRO version of WooCommerce delivery and pickup date time plugin, the shipping method of WooCommerce will be automatically changed based on customers delivery or pickup selection. To see how it works in a video, <a target="_blank" href="https://coderockz.com/woocommerce_shipping_methods_changed_on_delivey_pickup.gif">click here</a>
 
-✅ **Dynamically Enable/Disable Delivery/Pickup Based on WooCommerce Shipping:** Suppose, you want to offer your customers both delivery and self pickup to the city where you store locates but only offer self pickup to the customers who are out of your city. In that case this feature helps you to solve the case. To see how it works, <a target="_blank" href="https://coderockz.com/documentations/dynamically-enable-disable-delivery-pickup-based-on-woocommerce-shipping/">click here</a>
+✅ **Dynamically Enable/Disable Delivery/Pickup Based on WooCommerce Shipping:** Suppose, you want to offer your customers both delivery and self pickup to the city where you store locates but only offer self pickup to the customers who are out of your city. This feature helps helps you manage orders more efficiently by offering flexible options to local customers while avoiding delivery complications for out-of-city orders. For example
+
+Your store is located in City A.
+Customers in City A can enjoy both Delivery and Self Pickup options.
+
+Customers who are outside City A can still place orders, but they will have Self Pickup only available.
+
+How it works:
+
+📍 Within City A → Delivery 🚚 + Self Pickup 🏪
+📍 Outside City A → Self Pickup only 🏪
+
+To see how it works, <a target="_blank" href="https://coderockz.com/documentations/dynamically-enable-disable-delivery-pickup-based-on-woocommerce-shipping/">click here</a>
 
 ✅ **Calendar Language:** You can select your desired language for the date selection calendar on the checkout page so that your customer selects the date more easily. Available Language: English, Arabic, Austria, Azerbaijan, Albanian, Belarusian, Bulgarian, Bangla, Bosnian, Burmese, Catalan, Croatian, Czech, Danish, Dutch, Esperanto, Estonian, Finnish, French, Faroese, Farsi (Persian), Gaelic Irish, Greek, German, Georgian, Hebrew, Hindi, Hungarian, Indonesian, Icelandic, Italian, Japanese, Khmer, Kazakh, Lithuanian, Latvian, Macedonian, Mongolian, Mandarin, Malaysian, Norwegian, Punjabi, Polish, Portuguese, Romanian, Russian, Republic of Korea, Slovak, Spanish, Slovenian, Sinhala, Serbian Cyrillic, Serbian, Swedish, Thai, Turkish, Ukrainian, Uzbek, Uzbek Latin, Vietnamese, Welsh.
 
 ✅ **Report of Product Quantity:** It's a useful feature for those how need to know how many products he needs to prepare for delivery or pickup for a specific day.
 
-✅ **Delivery Reports As Excel Sheet(xlsx format):** By installing the PRO version of WooCommerce delivery date time plugin, you can now download the delivery reports as an excel sheet for today, tomorrow, this week, this month or any custom date range or any specific date wherem you get all the necessary informations like order id, order status, delivery details, delivery status, billing address, shipping address, order details, order total, customer note, etc.
+✅ **Delivery Reports As Excel Sheet(xlsx format):** By installing the PRO version of WooCommerce delivery date time plugin, you can now download the delivery reports as an excel sheet for today, tomorrow, this week, this month or any custom date range or any specific date where you get all the necessary information's like order id, order status, delivery details, delivery status, billing address, shipping address, order details, order total, customer note, etc.
 
 ✅ **Hide Plugin Module For Specific Shipping Method:** If your website is giving shipping via local courier or postal service like UPS, FedEX, DHL or similar service then you may want to hide the plugin module because there is no time frame when the product arrive to your customer via local courier or postal service. You can achieve this with the plugin. To see how it works in a video, <a target="_blank" href="https://coderockz.com/hide_plugin_for_specific_shipping_method.gif">click here</a>
 
-✅ **Maximum Delivery or Pickup Order Per Day:** By this woocommerce delivery scheduler plugin, you can set a maximum number of delivery/pickup/(delivery+pickup) order per day. After reaching the number, the date will automatically disabled to select.
+✅ **Maximum Delivery or Pickup Order Per Day:** By this WooCommerce delivery scheduler plugin, you can set a maximum number of delivery/pickup/(delivery + pickup) order per day. After reaching the number, the date will automatically disabled to select.
 
-✅ **Store Closing Time:** You can give a specific time as store closing time. After the time no one can select the current day. If you want to set further days off after this specific closing time, you can do that also. For example: 
+✅ **Store Closing/Cutoff Time:** You can give a specific time as store closing time. After the time no one can select the current day. If you want to set further days off after this specific closing time, you can do that also. Some use cases are as follows 
 
-&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is today. But after 12:00 PM of today, first available date is the tomorrow.
-&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is tomorrow. But after 5:00 PM of today, first available date is the day after tomorrow.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is today. But after 12:00 PM of today, first available date is the tomorrow.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is tomorrow. But after 5:00 PM of today, first available date is the day after tomorrow.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is today. But after 12:00 PM of today, first available date is the tomorrow and first available timeslot is after 3:00PM.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is tomorrow. But after 5:00 PM of today, first available date is the day after tomorrow and available timeslot is after 12:00PM.
 
-✅ **Delivery Calendar:** This is the most exciting feature of this plugin. You can now see the delivery/pickup order in a calendar view. Also, you can also see the product quantity in the calendar view. To see how it works in a video, <a target="_blank" href="https://coderockz.com/wp-content/uploads/2020/07/delivery-calendar.gif">click here</a>
+✅ **Delivery Calendar View:** This is the most exciting feature of this WooCommerce delivery and pickup date time plugin. You can now see the delivery/pickup order in a calendar view. Also, you can also see the product quantity in the calendar view. You can filter by delivery/pickup, by order status, even by PICKUP LOCATION if enabled. To see how it works in a video, <a target="_blank" href="https://coderockz.com/wp-content/uploads/2020/07/delivery-calendar.gif">click here</a>
 
-✅ **Advanced Delivery/Pickup Timeslot:** You can make a delivery/pickup timeslot as you want. For an example, you can make 2 timeslots like 2:00PM - 4:00PM and 6:00PM - 7:00PM. Also you can control in which weekdays the timeslot appears. You can also disable a timeslot for a specific product/category or based on woocommerce shipping zone/state/postcode. Also you can control a timeslot's maximum delivery/pickup order, time slot fee, disable timeslot for the current day, disable timeslot at a specific time, or enable timeslot only for specific dates etc. You can also make a timeslot with single time along with a time range. You can also show or hide a pickup slot based on pickup location. For it's various flexible timeslot features, it can easily the best woocommerce delivery time slot plugin.
+✅ **Advanced Delivery/Pickup Timeslot:** You can make a delivery/pickup timeslot as you want. For an example, you can make 2 timeslots like 2:00PM - 4:00PM and 6:00PM - 7:00PM. Also you can control in which weekdays the timeslot appears. You can also disable a timeslot for a specific product/category or based on WooCommerce shipping zone/state/postcode. Also you can control a timeslot's maximum delivery/pickup order, time slot fee, disable timeslot for the current day, disable timeslot at a specific time, or enable timeslot only for specific dates etc. You can also make a timeslot with single time along with a time range. For an example, 2:00PM, 4:00PM, 5:00PM etc. You can also show or hide a pickup slot based on pickup location. For it's various flexible timeslot features, it can easily the best WooCommerce delivery time slot plugin.
 
 ✅ **Pickup Location With Lot of Control:** You can specify a list of pickup location for the WooCommerce checkout page from where customers can select his preffered location to take his ordered products. Admin can specify set how many pickup order per location, disable a weekday/specific dates for a specific pickup location, disable pickup location for specific category or product. Also, can hide a pickup location based on WooCommerce shipping zone so the pickup location list is narrower based on customer's matched shipping zone.
 
-✅ **Special Open Days:** Sometimes a special day like Christmas is fallen in an weekend but you still want to open this day. By this best WooCommerce delivery and pickup date time plugin, you can open a specific weekend/ offdays. Also, you can set special open days for a specific category and if you want to open only the special days for a specific category, it is also possible. You can set up the special open days individually for delivery or pickup. Also can set processing delay if needed.
+✅ **Special Open Days:** Sometimes a special day like Christmas is fallen in an weekend but you still want to open this day. By this best WooCommerce delivery and pickup date time plugin, you can open a specific weekend/ off days. Also, you can set special open days for a specific category and if you want to open only the special days for a specific category, it is also possible. You can set up the special open days individually for delivery or pickup. Also can set processing delay if needed.
 
 ✅ **Translatable Texts:** You can translate every text of the plugin to your local language.
 
@@ -77,13 +91,13 @@ Here are some of the powerful features listed below. This WooCommerce delivery d
 
 ✅ **Processing Time Management:** Sometimes, your store has some products that can not deliver instantly. You need some times for processing those products. You can easily handle the situation with this plugin. So you don't need to worry because our plugin automatically disables timeslot based on your product processing time. You can either specify your processing time by category or product-wise or weekday wise. Also, you can exclude specific products or categories from processing time. This feature is super useful for restaurants and cafes. The most important part is, you can set different processing time for delivery and pickup.
 
-✅ **Sort Order By Delivery/Pickup Date time in WooCommerce Orders Page:** You can now sort your orders by ascending and descending sorting order on the woocommerce orders page by delivery details.
+✅ **Sort Order By Delivery/Pickup Date time in WooCommerce Orders Page:** You can now sort your orders by ascending and descending sorting order on the WooCommerce orders page by delivery details.
 
 ✅ **Sync to Google Calendar:** You can add the order information to your Google calendar as an event when an order is placed and the sync process is automated. You don't have to do anything except the settings. You can also give the opportunity to your customer to add his placed order information to his Google calendar also.
 
 ✅ **Delivery Tips Option:** By installing the PRO version of WooCommerce order delivery date time plugin, you can give an option of delivery tips for the delivery boys. You can either set a predefined tips dropdown value or a input field where the customer put any amount as tip. 
 
-✅ **Restrict Delivery/Pickup Option:** Now you can hide the delivery/pickup option until the cart amount reaches a certain amount. Also, can hide the delivery or pickup option if the cart has a specific category's product or a specific product.
+✅ **Restrict Delivery/Pickup Option:** Now you can hide the delivery/pickup option until the cart amount reaches a certain amount. You Can hide the delivery/pickup option if the cart has a specific category's product or a specific product. Also, you can hide the delivery/pickup option for a specific user role.
 
 ✅ **Smart Free Shipping:** Now you can hide the free shipping method until the cart amount reaches a certain amount. You can also hide/show free shipping only for today or tomorrow or some specific dates or any weekdays.
 
@@ -93,13 +107,13 @@ Here are some of the powerful features listed below. This WooCommerce delivery d
 
 ✅ **Next Week/Current week Off for Certain Category:** Sometime you need to off all the delivery date's for the next week or current week for a specific category. Customer can only choose the delivery/pickup date from the current week(next week off)/ next week(current week off).
 
-✅ **Category/Product wise Specific dates/weekdays Offdays:** You can set specific dates or weekdays as offdays for a specific category. The most important thing is, you can set this separately for delivery and pickup. 
+✅ **Category/Product wise Specific dates/weekdays Off days:** You can set specific dates or weekdays as off days for a specific category. The most important thing is, you can set this separately for delivery and pickup. 
 
-✅ **Shipping zone/state/postcode/method wise Specific dates/weekdays Offdays:** You can set specific dates or weekdays as offdays for a shipping zone. The most important thing is, you can set this separately for delivery and pickup. 
+✅ **Shipping zone/state/postcode/method wise Specific dates/weekdays Off days:** You can set specific dates or weekdays as off days for a shipping zone. The most important thing is, you can set this separately for delivery and pickup. 
 
 ✅ **Different store closing time for different weekday:** You can give a specific time as store closing time for a specific weekday. After the time no one can select the specific day from the calendar.
 
-✅ **Delivery Fee:** Another advanced feature of this WooCommerce order delivery date time plugin. You can specify a fee for same-day delivery, next day delivery, and other day delivery or a specific delivery date. Also can set weekday wise delivery fee like Sunday delivery fee or Thursday delivery fee.
+✅ **Delivery Fee:** Another advanced feature of this WooCommerce order delivery date time plugin is fee management. You can specify a fee for same-day delivery, next day delivery, and other day delivery or a specific delivery date. Also can set weekday wise delivery fee like Sunday delivery fee or Thursday delivery fee.
 
 ✅ **Delivery Fee/Shipping Method within X Minutes/Hours:** Now you can specify a shipping method only for next available x hours/minutes. The shipping methods is only applicable when customers select the special type of timeslot like Express Delivery($x) or Delivery within X hours/ minutes for $x. Also you can give a specific delivery fee for the next X hours/ minutes.
 
@@ -113,8 +127,8 @@ Here are some of the powerful features listed below. This WooCommerce delivery d
 
 ✅ **Plugin Position:** You can choose where you want to show this WooCommerce order delivery date time plugin at checkout page for your customer. The Positions are
 
-&nbsp;&nbsp;&nbsp;&nbsp;➡️ Classic checkout page: Before Billing Address, After Billing Address, Before Shipping Address, After Shipping Address, Before Order Notes, After Order Notes, Between Your Order And Payment Section, Before Your Order Section, Before Customer Details
-&nbsp;&nbsp;&nbsp;&nbsp;➡️ Block checkout page: After Contact Information Section, After Shipping Address Section, After Billing Address Section, After Shipping Options Section, After Payment Options Section, After Order Summary Section.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ **Classic checkout page:** Before Billing Address, After Billing Address, Before Shipping Address, After Shipping Address, Before Order Notes, After Order Notes, Between Your Order And Payment Section, Before Your Order Section, Before Customer Details
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ **Block checkout page:** After Contact Information Section, After Shipping Address Section, After Billing Address Section, After Shipping Options Section, After Payment Options Section, After Order Summary Section.
 
 ✅ **Other Settings:** Admin can give access to the shop manager, can change loading animation, background color, can add short notice and a lot of other features.
 
@@ -123,8 +137,8 @@ Here are some of the powerful features listed below. This WooCommerce delivery d
 
 Before installing the plugin please make sure that
 
-1. Your php version is 5.4 or greater
-2. Wordpress version is 4.0 or greater
+1. Your PHP version is 5.4 or greater
+2. WordPress version is 4.0 or greater
 2. WooCommerce version is 3.0 or greater
 
 This section describes how to install the plugin and get it working.
@@ -138,7 +152,7 @@ e.g.
 
 == Screenshots ==
 
-1. Timezone Settings
+1. Time zone Settings
 
 2. Order Type Settings
 
@@ -146,7 +160,7 @@ e.g.
 
 4. Pickup Date Settings
 
-5. Offdays Settings
+5. Off days Settings
 
 6. Delivery Time Settings
 
@@ -167,6 +181,10 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.83 =
+* Tweak: Compatibility check with WC v10.7.0
+* Tweak: Update the readme.txt
 
 = 1.3.82 =
 * Fixed: Minor bugs are fixed.
