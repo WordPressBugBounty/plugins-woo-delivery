@@ -4,7 +4,7 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, WooCommerce Delivery & Pickup Date Time 
 Requires at least: 4.0.1
 Tested up to: 7.0
-Stable tag: 1.3.84
+Stable tag: 1.3.85
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,7 +77,7 @@ To see how it works, <a target="_blank" href="https://coderockz.com/documentatio
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is today. But after 12:00 PM of today, first available date is the tomorrow and first available timeslot is after 3:00PM.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ Usually first available delivery date is tomorrow. But after 5:00 PM of today, first available date is the day after tomorrow and available timeslot is after 12:00PM.
 
-✅ **WooCommerce Shipping zone wise Store Closing/Cutoff Time:** You can give a specific time as store closing time for a specific woocommerce shipping zone. After the time no one can select the current day for this specific shipping zone. If you want to set further days off after this specific closing time, you can do that also. For example, usually first available delivery date is today. But after 12:00 PM of today for New York shipping zone, first available date is the tomorrow. But for California shipping zone, today is still open to select until 5:00PM. Other zones have still the opportunity to select today until store closing time.
+✅ **WooCommerce Shipping zone wise Store Closing/Cutoff Time:** You can give a specific time as store closing time for a specific WooCommerce shipping zone. After the time no one can select the current day for this specific shipping zone. If you want to set further days off after this specific closing time, you can do that also. For example, usually first available delivery date is today. But after 12:00 PM of today for New York shipping zone, first available date is the tomorrow. But for California shipping zone, today is still open to select until 5:00PM. Other zones have still the opportunity to select today until last closing time.
 
 ✅ **Delivery Calendar View:** This is the most exciting feature of this WooCommerce delivery and pickup date time plugin. You can now see the delivery/pickup order in a calendar view. Also, you can also see the product quantity in the calendar view. You can filter by delivery/pickup, by order status, even by PICKUP LOCATION if enabled. To see how it works in a video, <a target="_blank" href="https://coderockz.com/wp-content/uploads/2020/07/delivery-calendar.gif">click here</a>
 
@@ -183,6 +183,9 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.85 =
+* Tweak: Compatibility check with WC v10.8.1
 
 = 1.3.84 =
 * Fixed: Uncaught TypeError: Assignment to constant variable issue is fixed.
