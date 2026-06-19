@@ -4,7 +4,7 @@ Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, WooCommerce Delivery & Pickup Date Time 
 Requires at least: 4.0.1
 Tested up to: 7.0
-Stable tag: 1.3.85
+Stable tag: 1.3.86
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,8 +33,6 @@ To make your journey more easier & error free, We’ve a dedicated support team.
 == PRO Version Features ==
 
 Here are some of the powerful features listed below. This WooCommerce delivery date plugin includes many more features. Visit the <a target="_blank" href="https://coderockz.com/downloads/woocommerce-delivery-date-time-wordpress-plugin/">plugin page</a> to explore them all.
-
-✅ **Time Zone Based Delivery Information:** Delivery/Pickup information like date, time will be saved based on WordPress selected time zone.
 
 ✅ **Block Checkout Page Compatibility:** This WooCommerce delivery date time plugin is fully compatible with latest **WooCommerce block checkout page** along with the classic checkout page. Also this plugin is compatible with the Divi Builder, Elementor, CartFlows and almost every page builder. 
 
@@ -89,9 +87,7 @@ To see how it works, <a target="_blank" href="https://coderockz.com/documentatio
 
 ✅ **Translatable Texts:** You can translate every text of the plugin to your local language.
 
-✅ **Processing Days Management:** Sometimes, your store has some products that can not deliver instantly. You need some days for processing those products. You can easily handle the situation with this plugin. So you don't need to worry because our plugin automatically disables days based on your product processing days. You can either specify your processing days by category or product-wise or weekday wise or shipping zone wise. Also, you can exclude specific products or categories from processing days. The most important part is, you can set different processing days for delivery and pickup.
-
-✅ **Processing Time Management:** Sometimes, your store has some products that can not deliver instantly. You need some times for processing those products. You can easily handle the situation with this plugin. So you don't need to worry because our plugin automatically disables timeslot based on your product processing time. You can either specify your processing time by category or product-wise or weekday wise. Also, you can exclude specific products or categories from processing time. This feature is super useful for restaurants and cafes. The most important part is, you can set different processing time for delivery and pickup.
+✅ **Processing Days/Time Management:** Sometimes, your store has some products that can not deliver instantly. You need some days or some hours/minutes for processing those products. You can easily handle the situation with this plugin. So you don't need to worry because our plugin automatically disables days or timeslot based on your product processing days or processing time. You can either specify your processing days/time by category or product-wise or weekday wise or shipping zone wise. Also, you can exclude specific products or categories from processing days/time. The most important part is, you can set different processing days/time for delivery and pickup.
 
 ✅ **Sort Order By Delivery/Pickup Date time in WooCommerce Orders Page:** You can now sort your orders by ascending and descending sorting order on the WooCommerce orders page by delivery details.
 
@@ -105,9 +101,7 @@ To see how it works, <a target="_blank" href="https://coderockz.com/documentatio
 
 ✅ **Advanced Off Days/holidays:** With this WooCommerce delivery date time plugin, you can set any dates as off from the calendar in advance for delivery or pickup individually.
 
-✅ **Next Month Off for Certain Category:** Sometime you need to off all the delivery date's for the next months for a specific category. Customer can only choose the delivery/pickup date from the current month and for this we have that feature.
-
-✅ **Next Week/Current week Off for Certain Category:** Sometime you need to off all the delivery date's for the next week or current week for a specific category. Customer can only choose the delivery/pickup date from the current week(next week off)/ next week(current week off).
+✅ **Next Week/Current week/Next Month Off for Certain Category:** Sometime you need to off all the delivery date's for the next week or current week or next month for a specific category. Customer can only choose the delivery/pickup date from the current week(next week off)/ next week(current week off)/ current month(next month off).
 
 ✅ **Category/Product wise Specific dates/weekdays Off days:** You can set specific dates or weekdays as off days for a specific category. The most important thing is, you can set this separately for delivery and pickup. 
 
@@ -130,7 +124,7 @@ To see how it works, <a target="_blank" href="https://coderockz.com/documentatio
 ✅ **Plugin Position:** You can choose where you want to show this WooCommerce order delivery date time plugin at checkout page for your customer. The Positions are
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ **Classic checkout page:** Before Billing Address, After Billing Address, Before Shipping Address, After Shipping Address, Before Order Notes, After Order Notes, Between Your Order And Payment Section, Before Your Order Section, Before Customer Details
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ **Block checkout page:** After Contact Information Section, After Shipping Address Section, After Billing Address Section, After Shipping Options Section, After Payment Options Section, After Order Summary Section.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ **Block checkout page:** After Contact Information Section, After Shipping Address Section, After Billing Address Section, Before Shipping Options Section, After Shipping Options Section, After Payment Options Section, After Order Summary Section.
 
 ✅ **Other Settings:** Admin can give access to the shop manager, can change loading animation, background color, can add short notice and a lot of other features.
 
@@ -183,6 +177,9 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.86 =
+* Tweak: Update the readme.txt file
 
 = 1.3.85 =
 * Tweak: Compatibility check with WC v10.8.1
