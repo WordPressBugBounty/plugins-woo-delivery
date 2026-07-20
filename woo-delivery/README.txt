@@ -3,8 +3,8 @@ Contributors: CodeRockz
 Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, WooCommerce Delivery & Pickup Date Time 
 Requires at least: 4.0.1
-Tested up to: 7.0
-Stable tag: 1.3.86
+Tested up to: 7.0.2
+Stable tag: 1.3.87
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,7 @@ To see how it works, <a target="_blank" href="https://coderockz.com/documentatio
 
 ✅ **Hide Plugin Module For Specific Shipping Method:** If your website is giving shipping via local courier or postal service like UPS, FedEX, DHL or similar service then you may want to hide the plugin module because there is no time frame when the product arrive to your customer via local courier or postal service. You can achieve this with the plugin. To see how it works in a video, <a target="_blank" href="https://coderockz.com/hide_plugin_for_specific_shipping_method.gif">click here</a>
 
-✅ **Maximum Delivery or Pickup Order Per Day:** By this WooCommerce delivery scheduler plugin, you can set a maximum number of delivery/pickup/(delivery + pickup) order per day. After reaching the number, the date will automatically disabled to select.
+✅ **Maximum Delivery or Pickup Order Per Day/Per Weekday:** By this WooCommerce delivery scheduler plugin, you can set a maximum number of delivery/pickup/(delivery + pickup) order per day. After reaching the number, the date will automatically disabled to select. You can also set maximum delivery or pickup order for a specific weekday.
 
 ✅ **Store Closing/Cutoff Time:** You can give a specific time as store closing time. After the time no one can select the current day. If you want to set further days off after this specific closing time, you can do that also. Some use cases are as follows 
 
@@ -177,6 +177,9 @@ e.g.
 14. Checkout Page Pickup Time Field View
 
 == Changelog ==
+
+= 1.3.87 =
+* Tweak: Compatibility check with WC v10.9.4 & WP v7.0.2
 
 = 1.3.86 =
 * Tweak: Update the readme.txt file
