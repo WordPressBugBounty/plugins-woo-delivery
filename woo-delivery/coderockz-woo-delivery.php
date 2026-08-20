@@ -15,14 +15,14 @@
  * @wordpress-plugin
  * Plugin Name:       Delivery & Pickup Date Time for WooCommerce
  * Description:       Delivery & Pickup Date Time for WooCommerce is a WooCommerce plugin extension that gives the facility of selecting delivery/pickup date and time on order checkout page. Moreover, you don't need to worry about the styling because the plugin adjusts with your WordPress theme.
- * Version:           1.3.87
+ * Version:           1.3.88
  * Author:            CodeRockz
  * Author URI:        https://coderockz.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       woo-delivery
  * Domain Path:       /languages
- * WC tested up to:   10.9.4
+ * WC tested up to:   11.0.1
  */
 
 // If this file is called directly, abort.
@@ -47,7 +47,7 @@ if ( !defined( "CODEROCKZ_WOO_DELIVERY" ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CODEROCKZ_WOO_DELIVERY_VERSION', '1.3.87' );
+define( 'CODEROCKZ_WOO_DELIVERY_VERSION', '1.3.88' );
 
 /**
  * The code that runs during plugin activation.
