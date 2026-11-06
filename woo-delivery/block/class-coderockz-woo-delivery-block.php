@@ -4,6 +4,10 @@ namespace Coderockz\Woo_Delivery\Block;
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema;
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CheckoutSchema;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Coderockz_Woo_Delivery_Block {
     protected static $instance = null;
     static $IDENTIFIER = 'coderockz_woo_delivery';

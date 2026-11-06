@@ -1,6 +1,10 @@
 <?php
 namespace Coderockz\Woo_Delivery\Block;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Coderockz_Woo_Delivery_Block_Storage {
     protected static $instance = null;
 
@@ -53,7 +57,7 @@ class Coderockz_Woo_Delivery_Block_Storage {
         if ( $errors->has_errors() ) {
             $error_messages = $errors->get_error_messages();
             $combined_error_message = implode( "<br>", $error_messages );
-            throw new \WC_Data_Exception( 'CODEROCKZ_WOO_ERROR', $combined_error_message );
+            throw new \WC_Data_Exception( 'CODEROCKZ_WOO_ERROR', esc_attr($combined_error_message) );
         }
 
         if ( $settings['enable_delivery_option'] && !empty( $data['order_type'] ) ) {

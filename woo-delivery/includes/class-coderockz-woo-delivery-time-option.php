@@ -2,6 +2,10 @@
 
 require_once CODEROCKZ_WOO_DELIVERY_DIR . 'includes/class-coderockz-woo-delivery-helper.php';
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if( !class_exists( 'Coderockz_Woo_Delivery_Time_Option' ) ) {
 	
 	class Coderockz_Woo_Delivery_Time_Option {

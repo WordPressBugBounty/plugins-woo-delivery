@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if ( !class_exists( 'Coderockz_Woo_Delivery_Helper' ) ) {
 
     class Coderockz_Woo_Delivery_Helper {

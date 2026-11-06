@@ -177,13 +177,13 @@ class Coderockz_Woo_Delivery_Public {
 
         $today = wp_date('Y-m-d',current_time( 'timestamp', 1 ));
 
-        echo "<div data-today_date='" . $today . "' data-plugin-url='" . CODEROCKZ_WOO_DELIVERY_URL . "' id='coderockz_woo_delivery_setting_wrapper'>";
+        echo "<div data-today_date='" . esc_attr($today) . "' data-plugin-url='" . esc_url(CODEROCKZ_WOO_DELIVERY_URL) . "' id='coderockz_woo_delivery_setting_wrapper'>";
 
         $delivery_heading_checkout = ( isset( $other_settings['delivery_heading_checkout'] ) && !empty( $other_settings['delivery_heading_checkout'] ) ) ? stripslashes( $other_settings['delivery_heading_checkout'] ) : "";
 
         if ( $delivery_heading_checkout != "" ) {
             echo "<div id='coderockz-woo-delivery-public-delivery-details'>";
-            echo "<h3 style='margin-bottom:0;padding: 20px 0;'>" . __( $delivery_heading_checkout, 'woo-delivery' ) . "</h3>";
+            echo "<h3 style='margin-bottom:0;padding: 20px 0;'>" . esc_html( $delivery_heading_checkout) . "</h3>";
             echo "</div>";
         }
 
@@ -202,8 +202,8 @@ class Coderockz_Woo_Delivery_Public {
                     'class'       => [
                         'coderockz_woo_delivery_delivery_selection_box form-row-wide',
                     ],
-                    'label'       => __( $delivery_option_field_label, 'woo-delivery' ),
-                    'placeholder' => __( $delivery_option_field_label, 'woo-delivery' ),
+                    'label'       => esc_html( $delivery_option_field_label),
+                    'placeholder' => esc_html( $delivery_option_field_label),
                     'options'     => Coderockz_Woo_Delivery_Delivery_Option::delivery_option( $delivery_option_settings ),
                     'required'    => true,
                 ], WC()->checkout->get_value( 'coderockz_woo_delivery_delivery_selection_box' ) );
@@ -310,8 +310,8 @@ class Coderockz_Woo_Delivery_Public {
                     'class'             => [
                         'coderockz_woo_delivery_time_field form-row-wide',
                     ],
-                    'label'             => __( $delivery_time_field_label, "woo-delivery" ),
-                    'placeholder'       => __( $delivery_time_field_label, "woo-delivery" ),
+                    'label'             => esc_html( $delivery_time_field_label),
+                    'placeholder'       => esc_html( $delivery_time_field_label),
                     'options'           => Coderockz_Woo_Delivery_Time_Option::delivery_time_option( $delivery_time_settings ),
                     'required'          => $delivery_time_mandatory,
                     'custom_attributes' => [
@@ -360,8 +360,8 @@ class Coderockz_Woo_Delivery_Public {
                         'coderockz_woo_delivery_pickup_date_field form-row-wide',
                     ),
                     'id'                => "coderockz_woo_delivery_pickup_date_datepicker",
-                    'label'             => __( $pickup_date_field_heading, 'woo-delivery' ),
-                    'placeholder'       => __( $pickup_date_field_heading, 'woo-delivery' ),
+                    'label'             => esc_html( $pickup_date_field_heading),
+                    'placeholder'       => esc_html( $pickup_date_field_heading),
                     'required'          => $pickup_date_mandatory,
                     'custom_attributes' => [
                         'data-pickup_selectable_dates'  => $pickup_selectable_date,
@@ -398,8 +398,8 @@ class Coderockz_Woo_Delivery_Public {
                     'class'             => [
                         'coderockz_woo_delivery_pickup_time_field form-row-wide',
                     ],
-                    'label'             => __( $pickup_time_field_label, 'woo-delivery' ),
-                    'placeholder'       => __( $pickup_time_field_label, 'woo-delivery' ),
+                    'label'             => esc_html( $pickup_time_field_label),
+                    'placeholder'       => esc_html( $pickup_time_field_label),
                     'options'           => Coderockz_Woo_Delivery_Pickup_Option::pickup_time_option( $pickup_time_settings ),
                     'required'          => $pickup_time_mandatory,
                     'custom_attributes' => [
@@ -457,7 +457,7 @@ class Coderockz_Woo_Delivery_Public {
 
         if ( $enable_delivery_option && !$has_virtual_downloadable_products ) {
             if ( !isset( $_POST['coderockz_woo_delivery_delivery_selection_box'] ) ) {
-                wc_add_notice( __( $checkout_delivery_option_notice, "woo-delivery" ), 'error' );
+                wc_add_notice(esc_html( $checkout_delivery_option_notice), 'error' );
             }
 
         }
@@ -466,24 +466,24 @@ class Coderockz_Woo_Delivery_Public {
 
         if ( ( $enable_delivery_option && isset( $delivery_option_session ) && $delivery_option_session == "delivery" ) && $enable_delivery_date && $delivery_date_mandatory && !$has_virtual_downloadable_products && isset( $_POST['coderockz_woo_delivery_date_field'] ) ) {
             if ( $_POST['coderockz_woo_delivery_date_field'] == "" ) {
-                wc_add_notice( __( $checkout_date_notice, "woo-delivery" ), 'error' );
+                wc_add_notice(esc_html( $checkout_date_notice), 'error' );
             }
 
         } elseif ( !$enable_delivery_option && $enable_delivery_date && $delivery_date_mandatory && !$has_virtual_downloadable_products && isset( $_POST['coderockz_woo_delivery_date_field'] ) ) {
             if ( $_POST['coderockz_woo_delivery_date_field'] == "" ) {
-                wc_add_notice( __( $checkout_date_notice, "woo-delivery" ), 'error' );
+                wc_add_notice(esc_html( $checkout_date_notice), 'error' );
             }
 
         }
 
         if ( ( $enable_delivery_option && isset( $delivery_option_session ) && $delivery_option_session == "pickup" ) && $enable_pickup_date && $pickup_date_mandatory && !$has_virtual_downloadable_products && isset( $_POST['coderockz_woo_delivery_pickup_date_field'] ) ) {
             if ( $_POST['coderockz_woo_delivery_pickup_date_field'] == "" ) {
-                wc_add_notice( __( $checkout_pickup_date_notice, "woo-delivery" ), 'error' );
+                wc_add_notice(esc_html( $checkout_pickup_date_notice), 'error' );
             }
 
         } elseif ( !$enable_delivery_option && $enable_pickup_date && $pickup_date_mandatory && !$has_virtual_downloadable_products && isset( $_POST['coderockz_woo_delivery_pickup_date_field'] ) ) {
             if ( $_POST['coderockz_woo_delivery_pickup_date_field'] == "" ) {
-                wc_add_notice( __( $checkout_pickup_date_notice, "woo-delivery" ), 'error' );
+                wc_add_notice( esc_html( $checkout_pickup_date_notice), 'error' );
             }
 
         }
@@ -492,7 +492,7 @@ class Coderockz_Woo_Delivery_Public {
         if ( ( $enable_delivery_option && isset( $delivery_option_session ) && $delivery_option_session == "delivery" ) && $enable_delivery_time && $delivery_time_mandatory && !$has_virtual_downloadable_products ) {
 
             if ( !$_POST['coderockz_woo_delivery_time_field'] ) {
-                wc_add_notice( __( $checkout_time_notice, "woo-delivery" ), 'error' );
+                wc_add_notice( esc_html( $checkout_time_notice), 'error' );
             }
 
             if ( ( $enable_delivery_date && $_POST['coderockz_woo_delivery_date_field'] && !empty( $_POST['coderockz_woo_delivery_date_field'] ) ) && ( $enable_delivery_time && $_POST['coderockz_woo_delivery_time_field'] && $_POST['coderockz_woo_delivery_time_field'] != "" ) ) {
@@ -505,7 +505,7 @@ class Coderockz_Woo_Delivery_Public {
 
         } elseif ( !$enable_delivery_option && $enable_delivery_time && $delivery_time_mandatory && !$has_virtual_downloadable_products ) {
             if ( !$_POST['coderockz_woo_delivery_time_field'] ) {
-                wc_add_notice( __( $checkout_time_notice, "woo-delivery" ), 'error' );
+                wc_add_notice( esc_html( $checkout_time_notice ), 'error' );
             }
 
             if ( ( $enable_delivery_date && $_POST['coderockz_woo_delivery_date_field'] && !empty( $_POST['coderockz_woo_delivery_date_field'] ) ) && ( $enable_delivery_time && $_POST['coderockz_woo_delivery_time_field'] && !empty( $_POST['coderockz_woo_delivery_time_field'] ) ) ) {
@@ -520,7 +520,7 @@ class Coderockz_Woo_Delivery_Public {
         // if the field is set, if not then show an error message.
         if ( ( $enable_delivery_option && isset( $delivery_option_session ) && $delivery_option_session == "pickup" ) && $enable_pickup_time && $pickup_time_mandatory && !$has_virtual_downloadable_products ) {
             if ( !$_POST['coderockz_woo_delivery_pickup_time_field'] ) {
-                wc_add_notice( __( $checkout_pickup_time_notice, "woo-delivery" ), 'error' );
+                wc_add_notice( esc_html( $checkout_pickup_time_notice ), 'error' );
             }
 
             if ( ( $enable_pickup_date && $_POST['coderockz_woo_delivery_pickup_date_field'] && !empty( $_POST['coderockz_woo_delivery_pickup_date_field'] ) ) && ( $enable_pickup_time && $_POST['coderockz_woo_delivery_pickup_time_field'] && !empty( $_POST['coderockz_woo_delivery_pickup_time_field'] ) ) ) {
@@ -533,7 +533,7 @@ class Coderockz_Woo_Delivery_Public {
 
         } elseif ( !$enable_delivery_option && $enable_pickup_time && $pickup_time_mandatory && !$has_virtual_downloadable_products ) {
             if ( !$_POST['coderockz_woo_delivery_pickup_time_field'] ) {
-                wc_add_notice( __( $checkout_pickup_time_notice, "woo-delivery" ), 'error' );
+                wc_add_notice( esc_html( $checkout_pickup_time_notice ), 'error' );
             }
 
             if ( ( $enable_pickup_date && $_POST['coderockz_woo_delivery_pickup_date_field'] && !empty( $_POST['coderockz_woo_delivery_pickup_date_field'] ) ) && ( $enable_pickup_time && $_POST['coderockz_woo_delivery_pickup_time_field'] && !empty( $_POST['coderockz_woo_delivery_pickup_time_field'] ) ) ) {
@@ -827,9 +827,6 @@ class Coderockz_Woo_Delivery_Public {
 
         $has_virtual_downloadable_products = $this->helper->check_virtual_downloadable_products();
 
-        $previousErrorLevel = error_reporting();
-        error_reporting( \E_ERROR );
-
         if ( $enable_delivery_option && $_POST['coderockz_woo_delivery_delivery_selection_box'] != "" ) {
             if ( $this->hpos ) {
                 $order->update_meta_data( 'delivery_type', $_POST['coderockz_woo_delivery_delivery_selection_box'] );
@@ -912,7 +909,6 @@ class Coderockz_Woo_Delivery_Public {
             }
         }
 
-        error_reporting( $previousErrorLevel );
         if ( $this->hpos ) {
             $order->save();
         }
@@ -1307,7 +1303,7 @@ class Coderockz_Woo_Delivery_Public {
                     $delivery_date = date( $delivery_date_format, strtotime( get_post_meta( $order->get_id(), 'delivery_date', true ) ) );
                 }
 
-                $my_account_column .= __( $delivery_date_field_label, "woo-delivery" ) . ": " . $delivery_date;
+                $my_account_column .=esc_html( $delivery_date_field_label ) . ": " . $delivery_date;
                 $my_account_column .= "<br>";
             }
 
@@ -1330,7 +1326,7 @@ class Coderockz_Woo_Delivery_Public {
 
                 $time_value = date( $time_format, strtotime( $minutes[0] ) ) . ' - ' . date( $time_format, strtotime( $minutes[1] ) );
 
-                $my_account_column .= __( $delivery_time_field_label, "woo-delivery" ) . ": " . $time_value;
+                $my_account_column .= esc_html( $delivery_time_field_label ) . ": " . $time_value;
                 $my_account_column .= "<br>";
             }
 
@@ -1341,7 +1337,7 @@ class Coderockz_Woo_Delivery_Public {
                 } else {
                     $pickup_date = date( $pickup_date_format, strtotime( get_post_meta( $order->get_id(), 'pickup_date', true ) ) );
                 }
-                $my_account_column .= __( $pickup_date_field_label, "woo-delivery" ) . ": " . $pickup_date;
+                $my_account_column .= esc_html( $pickup_date_field_label ) . ": " . $pickup_date;
                 $my_account_column .= "<br>";
             }
 
@@ -1361,12 +1357,14 @@ class Coderockz_Woo_Delivery_Public {
 
                 $pickup_time_value = date( $pickup_time_format, strtotime( $pickup_minutes[0] ) ) . ' - ' . date( $pickup_time_format, strtotime( $pickup_minutes[1] ) );
 
-                $my_account_column .= __( $pickup_time_field_label, "woo-delivery" ) . ": " . $pickup_time_value;
+                $my_account_column .= esc_html( $pickup_time_field_label ) . ": " . $pickup_time_value;
                 $my_account_column .= "<br>";
 
             }
 
-            echo $my_account_column;
+            $allowed_html = array('br' => array());
+            echo wp_kses( $my_account_column, $allowed_html );
+            //echo $my_account_column;
         }
     }
 
@@ -1422,7 +1420,7 @@ class Coderockz_Woo_Delivery_Public {
             }
 
             $total_rows['delivery_date'] = array(
-                'label' => __( $delivery_date_field_label, "woo-delivery" ),
+                'label' => esc_html( $delivery_date_field_label ),
                 'value' => $delivery_date,
             );
         }
@@ -1440,7 +1438,7 @@ class Coderockz_Woo_Delivery_Public {
             $time_value = date( $time_format, strtotime( $minutes[0] ) ) . ' - ' . date( $time_format, strtotime( $minutes[1] ) );
 
             $total_rows['delivery_time'] = array(
-                'label' => __( $delivery_time_field_label, "woo-delivery" ),
+                'label' => esc_html( $delivery_time_field_label ),
                 'value' => $time_value,
             );
         }
@@ -1454,7 +1452,7 @@ class Coderockz_Woo_Delivery_Public {
             }
 
             $total_rows['pickup_date'] = array(
-                'label' => __( $pickup_date_field_label, "woo-delivery" ),
+                'label' => esc_html( $pickup_date_field_label ),
                 'value' => $pickup_date,
             );
         }
@@ -1470,7 +1468,7 @@ class Coderockz_Woo_Delivery_Public {
             $pickup_time_value = date( $pickup_time_format, strtotime( $pickup_minutes[0] ) ) . ' - ' . date( $pickup_time_format, strtotime( $pickup_minutes[1] ) );
 
             $total_rows['pickup_time'] = array(
-                'label' => __( $pickup_time_field_label, "woo-delivery" ),
+                'label' => esc_html( $pickup_time_field_label ),
                 'value' => $pickup_time_value,
             );
         }
@@ -1482,8 +1480,7 @@ class Coderockz_Woo_Delivery_Public {
         if ( is_checkout() && !( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) ) ) {
             $other_settings = get_option( 'coderockz_woo_delivery_other_settings' );
             $custom_css = isset( $other_settings['custom_css'] ) && $other_settings['custom_css'] != "" ? stripslashes( $other_settings['custom_css'] ) : "";
-            $custom_css = wp_unslash( $custom_css );
-            echo '<style>' . $custom_css . '</style>';
+            echo '<style>' . esc_attr(wp_unslash($custom_css)) . '</style>';
         }
 
     }
@@ -1587,12 +1584,10 @@ class Coderockz_Woo_Delivery_Public {
         $delivery_pickup_settings = get_option( 'coderockz_woo_delivery_pickup_location_settings' );
         $additional_field_settings = get_option( 'coderockz_woo_delivery_additional_field_settings' );
 
-        $delivery_date_field_label = ( isset( $delivery_date_settings['field_label'] ) && !empty( $delivery_date_settings['field_label'] ) ) ? stripslashes( $delivery_date_settings['field_label'] ) : __( "Delivery Date", 'coderockz-woo-delivery' );
-        $pickup_date_field_label = ( isset( $pickup_date_settings['pickup_field_label'] ) && !empty( $pickup_date_settings['pickup_field_label'] ) ) ? stripslashes( $pickup_date_settings['pickup_field_label'] ) : __( "Pickup Date", 'coderockz-woo-delivery' );
-        $delivery_time_field_label = ( isset( $delivery_time_settings['field_label'] ) && !empty( $delivery_time_settings['field_label'] ) ) ? stripslashes( $delivery_time_settings['field_label'] ) : __( "Delivery Time", 'coderockz-woo-delivery' );
-        $pickup_time_field_label = ( isset( $pickup_time_settings['field_label'] ) && !empty( $pickup_time_settings['field_label'] ) ) ? stripslashes( $pickup_time_settings['field_label'] ) : __( "Pickup Time", 'coderockz-woo-delivery' );
-        $pickup_location_field_label = ( isset( $delivery_pickup_settings['field_label'] ) && !empty( $delivery_pickup_settings['field_label'] ) ) ? stripslashes( $delivery_pickup_settings['field_label'] ) : __( "Pickup Location", 'coderockz-woo-delivery' );
-        $additional_field_field_label = ( isset( $additional_field_settings['field_label'] ) && !empty( $additional_field_settings['field_label'] ) ) ? stripslashes( $additional_field_settings['field_label'] ) : __( "Special Note About Delivery", 'coderockz-woo-delivery' );
+        $delivery_date_field_label = ( isset( $delivery_date_settings['field_label'] ) && !empty( $delivery_date_settings['field_label'] ) ) ? stripslashes( $delivery_date_settings['field_label'] ) : __( "Delivery Date", 'woo-delivery' );
+        $pickup_date_field_label = ( isset( $pickup_date_settings['pickup_field_label'] ) && !empty( $pickup_date_settings['pickup_field_label'] ) ) ? stripslashes( $pickup_date_settings['pickup_field_label'] ) : __( "Pickup Date", 'woo-delivery' );
+        $delivery_time_field_label = ( isset( $delivery_time_settings['field_label'] ) && !empty( $delivery_time_settings['field_label'] ) ) ? stripslashes( $delivery_time_settings['field_label'] ) : __( "Delivery Time", 'woo-delivery' );
+        $pickup_time_field_label = ( isset( $pickup_time_settings['field_label'] ) && !empty( $pickup_time_settings['field_label'] ) ) ? stripslashes( $pickup_time_settings['field_label'] ) : __( "Pickup Time", 'woo-delivery' );
 
         // if any timezone data is saved, set default timezone with the data
         //$timezone = $this->helper->get_the_timezone();
@@ -1687,7 +1682,11 @@ class Coderockz_Woo_Delivery_Public {
 
         }
 
-        echo $column;
+        //echo $column;
+        echo wp_kses( $column, array(
+            'br'     => array(),
+            'strong' => array(),
+        ) );
 
     }
 
@@ -1705,12 +1704,10 @@ class Coderockz_Woo_Delivery_Public {
         $delivery_pickup_settings = get_option( 'coderockz_woo_delivery_pickup_location_settings' );
         $additional_field_settings = get_option( 'coderockz_woo_delivery_additional_field_settings' );
 
-        $delivery_date_field_label = ( isset( $delivery_date_settings['field_label'] ) && !empty( $delivery_date_settings['field_label'] ) ) ? stripslashes( $delivery_date_settings['field_label'] ) : __( "Delivery Date", 'coderockz-woo-delivery' );
-        $pickup_date_field_label = ( isset( $pickup_date_settings['pickup_field_label'] ) && !empty( $pickup_date_settings['pickup_field_label'] ) ) ? stripslashes( $pickup_date_settings['pickup_field_label'] ) : __( "Pickup Date", 'coderockz-woo-delivery' );
-        $delivery_time_field_label = ( isset( $delivery_time_settings['field_label'] ) && !empty( $delivery_time_settings['field_label'] ) ) ? stripslashes( $delivery_time_settings['field_label'] ) : __( "Delivery Time", 'coderockz-woo-delivery' );
-        $pickup_time_field_label = ( isset( $pickup_time_settings['field_label'] ) && !empty( $pickup_time_settings['field_label'] ) ) ? stripslashes( $pickup_time_settings['field_label'] ) : __( "Pickup Time", 'coderockz-woo-delivery' );
-        $pickup_location_field_label = ( isset( $delivery_pickup_settings['field_label'] ) && !empty( $delivery_pickup_settings['field_label'] ) ) ? stripslashes( $delivery_pickup_settings['field_label'] ) : __( "Pickup Location", 'coderockz-woo-delivery' );
-        $additional_field_field_label = ( isset( $additional_field_settings['field_label'] ) && !empty( $additional_field_settings['field_label'] ) ) ? stripslashes( $additional_field_settings['field_label'] ) : __( "Special Note About Delivery", 'coderockz-woo-delivery' );
+        $delivery_date_field_label = ( isset( $delivery_date_settings['field_label'] ) && !empty( $delivery_date_settings['field_label'] ) ) ? stripslashes( $delivery_date_settings['field_label'] ) : __( "Delivery Date", 'woo-delivery' );
+        $pickup_date_field_label = ( isset( $pickup_date_settings['pickup_field_label'] ) && !empty( $pickup_date_settings['pickup_field_label'] ) ) ? stripslashes( $pickup_date_settings['pickup_field_label'] ) : __( "Pickup Date", 'woo-delivery' );
+        $delivery_time_field_label = ( isset( $delivery_time_settings['field_label'] ) && !empty( $delivery_time_settings['field_label'] ) ) ? stripslashes( $delivery_time_settings['field_label'] ) : __( "Delivery Time", 'woo-delivery' );
+        $pickup_time_field_label = ( isset( $pickup_time_settings['field_label'] ) && !empty( $pickup_time_settings['field_label'] ) ) ? stripslashes( $pickup_time_settings['field_label'] ) : __( "Pickup Time", 'woo-delivery' );
 
         // if any timezone data is saved, set default timezone with the data
         //$timezone = $this->helper->get_the_timezone();
@@ -1804,7 +1801,12 @@ class Coderockz_Woo_Delivery_Public {
 
         }
 
-        echo $column;
+        //echo $column;
+
+        echo wp_kses( $column, array(
+            'br'     => array(),
+            'strong' => array(),
+        ) );
     }
 
     public function coderockz_woo_delivery_init_functionality() {

@@ -1,5 +1,10 @@
 <?php
 require_once CODEROCKZ_WOO_DELIVERY_DIR . 'includes/class-coderockz-woo-delivery-helper.php';
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if( !class_exists( 'Coderockz_Woo_Delivery_Delivery_Option' ) ) {
 
 	class Coderockz_Woo_Delivery_Delivery_Option {
@@ -10,8 +15,8 @@ if( !class_exists( 'Coderockz_Woo_Delivery_Delivery_Option' ) ) {
 			//$timezone = $helper->get_the_timezone();
 			//date_default_timezone_set($timezone);
 			
-			$delivery_field_label = (isset($delivery_option_settings['delivery_label']) && !empty($delivery_option_settings['delivery_label'])) ? stripslashes($delivery_option_settings['delivery_label']) : __("Delivery", "woo-delivery");
-			$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? stripslashes($delivery_option_settings['pickup_label']) : __("Pickup", "woo-delivery");
+			$delivery_field_label = (isset($delivery_option_settings['delivery_label']) && !empty($delivery_option_settings['delivery_label'])) ? stripslashes(esc_attr($delivery_option_settings['delivery_label'])) : __("Delivery", "woo-delivery");
+			$pickup_field_label = (isset($delivery_option_settings['pickup_label']) && !empty($delivery_option_settings['pickup_label'])) ? stripslashes(esc_attr($delivery_option_settings['pickup_label'])) : __("Pickup", "woo-delivery");
 
 			$delivery_option = [];
 
@@ -19,9 +24,9 @@ if( !class_exists( 'Coderockz_Woo_Delivery_Delivery_Option' ) ) {
 				$delivery_option[''] = '';
 			}
 				
-			$delivery_option['delivery'] = __( $delivery_field_label, 'woo-delivery' );
+			$delivery_option['delivery'] = esc_html( $delivery_field_label );
 
-			$delivery_option['pickup'] = __( $pickup_field_label, 'woo-delivery' );
+			$delivery_option['pickup'] = esc_html( $pickup_field_label );
 			
 			return $delivery_option;
 		}

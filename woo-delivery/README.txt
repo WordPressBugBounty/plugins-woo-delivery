@@ -2,9 +2,9 @@
 Contributors: CodeRockz
 Donate link: https://coderockz.com
 Tags: WooCommerce Delivery Date, WooCommerce Pickup Date, WooCommerce Delivery Time, WooCommerce Pickup Time, WooCommerce Delivery & Pickup Date Time 
-Requires at least: 4.0.1
-Tested up to: 7.1.3
-Stable tag: 1.3.90
+Requires at least: 5.3.0
+Tested up to: 7.1.4
+Stable tag: 1.3.91
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,7 +178,11 @@ e.g.
 
 == Changelog ==
 
-= 1.3.89 =
+= 1.3.91 =
+* Tweak: Compatibility check with WC v11.2.2 & WP v7.1.4
+* Tweak: Improve comprehensive security and WordPress coding standards.
+
+= 1.3.90 =
 * Tweak: Compatibility check with WC v11.2.1 & WP v7.1.3
 
 = 1.3.89 =

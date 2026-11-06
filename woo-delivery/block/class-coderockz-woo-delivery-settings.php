@@ -6,6 +6,10 @@ require_once CODEROCKZ_WOO_DELIVERY_DIR . 'includes/class-coderockz-woo-delivery
 require_once CODEROCKZ_WOO_DELIVERY_DIR . 'includes/class-coderockz-woo-delivery-time-option.php';
 require_once CODEROCKZ_WOO_DELIVERY_DIR . 'includes/class-coderockz-woo-delivery-pickup-time-option.php';
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Coderockz_Woo_Delivery_Settings {
     private static $instance = null;
     private $helper;
